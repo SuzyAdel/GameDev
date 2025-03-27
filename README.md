@@ -1,5 +1,8 @@
 # Unity Game Development Learning Journey 🚀
 Learning Unity physics, scripting, and game dev one bug at a time — with memes, color, and questionable experiments.
+
+![image](https://github.com/user-attachments/assets/23c59097-ca64-43d5-a639-294ce56e2767)
+
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
 ## 🗂️ Master Table of Contents

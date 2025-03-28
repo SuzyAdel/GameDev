@@ -5,6 +5,7 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
+
 # Unity Game Dev Learning Journey 🚀🎮
 
 ## 🗂️ Master Table of Contents
@@ -36,6 +37,7 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | | Heightmaps | Convert real-world elevation into Unity terrains. | Want to game in your backyard? Import its heightmap! |
 ---
 
+
 ## Debug Table 🐞🔍
 | Bug | Observation | Solution | Funny Comment |
 |------|------------|----------|---------------|
@@ -48,6 +50,10 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | Trigger confusion | Didn’t know which object the other was referring to in OnTriggerEnter(). | Clarified reference: slime = trigger holder; "other" = object entering zone. | "Other" was the friend we made along the way. |
 | Infinite Jumping | Player could jump infinitely like Flappy Bird. | Added grounded check before allowing jumps. | Accidental infinite jetpack mode unlocked! |
 | Ramp Gravity Snapping | Falling from a ramp caused unnatural snapping effect. | Adjusted gravity calculations and ensured smooth velocity transition. | When Unity physics takes "teleportation" a bit too seriously. |
+| Rigidbody not falling | Object ignored gravity and stayed in place. | Added a Rigidbody component and Collider. Character Controller replaces both. | Gravity who? |
+| Object stuck, not moving | Repetitive movement logic caused conflicts. | Removed redundant commands and used only SimpleMove(). | "Pick one movement method, Unity said." |
+| Game froze | Used `Time.deltaTime` instead of `Time.fixedDeltaTime`. | Fixed by replacing with `Time.deltaTime`. | Physics engine: "PAUSE!" |
+
 ---
 
 

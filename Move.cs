@@ -1,17 +1,17 @@
 using UnityEditor;
 using UnityEngine;
-// lect 4 
+
 public class Move : MonoBehaviour
 {
     public float speed = 2.0f;
-    public Camera cam;
+    //public Camera cam;
     public GameObject fallingObject;
 
     private float oneSecond = 0.1f;
     private CharacterController characterController;
-    private bool inTriggerZone = false;//flag in zone or not
+    private bool inTriggerZone = false;
 
-    public float jumpThrust = 4.0f; // how much it goes up 
+    public float jumpThrust = 4.0f;
     private float yWithGravity;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,7 +32,7 @@ public class Move : MonoBehaviour
         inTriggerZone = false;
     }
 
-    private void FixedUpdate()//called every fixed frame, used when dealing with physics, falling objects in right area
+    private void FixedUpdate()
     {
         if (inTriggerZone)
         {
@@ -49,48 +49,47 @@ public class Move : MonoBehaviour
             oneSecond -= Time.deltaTime;
         }
     }
-    
 
 
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Grounded: " + characterController.isGrounded);//mesh byban ctrl shift c 
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 moveVector = new Vector3(x, 0, z);
         moveVector.Normalize();
-        // JUMP 
-        if (characterController.isGrounded)// if not the oject will fly like flappy bird 
+
+        if (characterController.isGrounded)
         {
             yWithGravity = 0.0f;
 
-            if (Input.GetButton("Jump"))// SPACE BAR automatically 
+            if (Input.GetButton("Jump"))
             {
-                yWithGravity = jumpThrust; // not normilized to allow jump thrust
+                yWithGravity = jumpThrust;
             }
         }
 
-        yWithGravity += Physics.gravity.y * Time.deltaTime;// gravit max at once , so time(multiply with time to spread the effect )
-                                                           // instanteous? no so * Time.deltatime 
+        yWithGravity += Physics.gravity.y * Time.deltaTime;
 
-        Vector3 moveAndJump = moveVector * speed; // move * speed
+        Vector3 moveAndJump = moveVector * speed;
         moveAndJump.y = yWithGravity;
 
-        characterController.Move(moveAndJump * Time.deltaTime);
+        //characterController.Move(moveAndJump * Time.deltaTime);
 
-        //characterController.SimpleMove(moveVector * speed);
-        
-        if(moveVector != Vector3.zero)
+        characterController.SimpleMove(moveVector * speed);
+
+        if (moveVector != Vector3.zero)
         {
             Quaternion lookAt = Quaternion.LookRotation(moveVector, Vector3.up);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookAt, 360 * Time.deltaTime);
         }
 
-        cam.transform.position = gameObject.transform.position + new Vector3(0, 1, -5);
-        cam.transform.LookAt(gameObject.transform);
+        //cam.transform.position = gameObject.transform.position + new Vector3(0, 1, -5);
+       // cam.transform.LookAt(gameObject.transform);
 
 
 

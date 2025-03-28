@@ -5,46 +5,49 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
+# Unity Game Dev Learning Journey 🚀🎮
+
 ## 🗂️ Master Table of Contents
-| Week | Key Topics                                             |
-|------|--------------------------------------------------------|
-| 1    | OpenGL vs DirectX, Unity Setup, CPU vs GPU, 2D vs 3D, Transforms |
-| 2    | Mesh vs Mesh Renderer, Colliders, Prefabs, Baking, Material Tips |
-| 3    | Maps Comparison, Light Types, Rigidbody Concepts, Damping, Collision Detection, Friction |
-
+| Week | Topics Covered |
+|------|---------------|
+| **Week 1** | OpenGL vs. DirectX, Unity Setup, CPU vs. GPU, 2D vs. 3D, Global vs. Local Transforms |
+| **Week 2** | Mesh vs. Mesh Renderer, Colliders & Triggers, Prefab vs. Asset, Light Baking |
+| **Week 3** | Maps (Base, Normal, Height), Light Types, Rigidbody Damping, Collision Detection, Friction |
+| **Week 4** | Character Controller, Player Movement, Jump Physics, Gravity, FixedUpdate vs. Update, Terrain Heightmaps |
 ---
-
 
 
 ## 📚 Technical Concepts & Fun Tips
-| Week  | Concept                   | Explanation (Bullets)                                                                                                   | Fun Tip                                           |
-|-------|----------------------------|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
-| Week 1| Unity Setup & Transforms   | - Learn rotation modes<br>- Be mindful of global/local confusion                                                     | Unity will keep you humble!                      |
-| Week 2| Material Application       | - Drag & drop<br>- Check tiling<br>- Use dropdowns                                                                   | Dragging & dropping: Unity's blessing!          |
-|       | Light Pollution Control    | - Reduce intensity<br>- Adjust range<br>- Avoid overexposure                                                         | Too bright? Welcome to nuclear reactor mode!    |
-|       | Transform Scaling Advice   | - Avoid extreme scaling in Unity<br>- Prefer scaling in modeling software                                             | Stretchy objects = Unity tantrums!              |
-|       | Camera Physical Mode       | - Shutter speed simulation<br>- More realistic outputs                                                                | Let your camera cosplay as a DSLR!              |
-|       | Scene Navigation Tips      | - Fly around with right-click & WASD<br>- Orbit with Alt + Left-click                                                 | Pretend you’re Iron Man!                        |
-| Week 3| Rigidbody Fun              | - Add Rigidbody<br>- Control gravity<br>- Lock axes                                                                  | Giving life to rocks!                           |
-|       | Physics Material           | - Play with friction & bounciness<br>- Combine settings                                                              | Rubber or bowling ball? You choose!             |
-|       | Collision Types            | - Discrete vs. Continuous<br>- Switch to continuous for fast objects                                                  | Prevent gravity glitches mid-fall!              |
-|       | OnCollision vs. OnTrigger  | - Collision = physical force<br>- Trigger = logical event                                                             | Triggers are secret switches!                  |
-|       | Interpolation Magic        | - Smooth object motion<br>- Use interpolation to avoid jerks                                                          | Silky smooth motion incoming!                   |
-|       | Input Axis Debugging       | - Check input manager<br>- Normalize vectors                                                                          | No more Sonic-speed diagonals!                  |
 
+## Technical Concepts & Fun Tips 🛠️✨
+| Week | Concept | Explanation | Fun Tip |
+|------|---------|-------------|---------|
+| **Week 1** | OpenGL vs. DirectX | Graphics APIs; OpenGL is cross-platform, DirectX is Windows-focused. | Choose wisely, like picking your Pokémon starter! |
+| | CPU vs. GPU | CPU handles logic, GPU handles rendering. | GPUs = artists, CPUs = managers. |
+| | 2D vs. 3D | 2D = points on a plane, 3D = axes and depth. | 2D: Simpler but less immersive; 3D: Welcome to the Matrix. |
+| **Week 2** | Material Application | Drag & drop textures onto objects or assign via Mesh Renderer. | Lazy devs love drag-and-drop! |
+| | Light Pollution Control | Avoid over-lighting; use intensity & range wisely. | If you feel blinded, so will your players. |
+| **Week 3** | Rigidbody | Enables Unity physics; responds to gravity, forces, collisions. | Feels like bringing a rock to life. |
+| | Gravity Control | Customizable in Rigidbody settings. | Zero gravity? Floating chaos unlocked! |
+| | OnCollision vs. OnTrigger | OnCollision includes physics response; OnTrigger is for logic. | Triggers = invisible switches! |
+| **Week 4** | Character Controller | A specialized component for player movement. | Avoids reinventing the wheel for movement. |
+| | SimpleMove vs. Move | SimpleMove includes time factor; Move doesn’t. | One does the math for you, one lets you suffer. |
+| | Jumping Physics | Uses velocity + gravity for realistic movement. | Apply force upwards, let gravity do the rest. |
+| | Heightmaps | Convert real-world elevation into Unity terrains. | Want to game in your backyard? Import its heightmap! |
 ---
 
-## 🐞 Debug Log Table
-| Bug                         | Observation                                         | Solution                                               | Funny Comment                                    |
-|-----------------------------|-----------------------------------------------------|--------------------------------------------------------|-------------------------------------------------|
-| Local vs Global confusion   | Rotations flipped unexpectedly                      | Switch modes with toolbar; verify parent/world mode    | Unity: Making you question reality since day one. |
-| Overwhelmed by panels       | Too many tabs and windows                           | Customized layouts; hid less-used panels              | Feels like piloting a spaceship!                 |
-| Static spheres not rolling  | Awkward stillness between two spheres               | Added colliders & adjusted rigidbody                  | Just needed a little push toward friendship!     |
-| Creepy character snapping   | Character suddenly flips toward the camera          | Used LookAt with normalized vectors                   | Exorcist mode: activated.                        |
-| Sudden object tunneling     | Falling objects ignored collision plane             | Switched to Continuous collision & interpolation      | Gravity took a coffee break.                     |
-| Diagonal speed boost        | Diagonal motion way too fast                        | Normalized input vector                               | Accidental Mario Kart drift!                     |
-| Trigger confusion           | Which object triggered which?                       | Clarified references in OnTriggerEnter()             | The 'other' was the friend we made along the way!|
-
+## Debug Table 🐞🔍
+| Bug | Observation | Solution | Funny Comment |
+|------|------------|----------|---------------|
+| Local vs Global confusion in rotations | Switch between modes with toolbar; always check if rotation happens relative to parent or world. | Always verify rotation frame of reference. | Unity gaslighting me into thinking I rotated wrong. |
+| Overwhelmed by Unity panels | Too many buttons, too many views. | Took deep breaths and focused on one panel at a time. | "Where am I? What year is it?" |
+| Static spheres not rolling | Two spheres sitting awkwardly on each other — zero rolling, 100% awkwardness. | Added colliders, adjusted rigid body parameters. | They're just shy. Let them roll into friendship! |
+| Creepy character snapping | Character face suddenly flips toward camera — terrifying horror movie moment. | Used LookAt with normalized vector and world rotation settings. | Instant Exorcist mode: activated. |
+| Sudden object tunneling | Falling spheres going through the plane, physics ignored. | Switched collision detection to Continuous, added interpolation. | When gravity says "goodbye" mid-fall. |
+| Diagonal speed boost | Moving diagonally made the object run faster than Sonic. | Normalized input vector magnitude. | Mario Kart drift unlocked by accident. |
+| Trigger confusion | Didn’t know which object the other was referring to in OnTriggerEnter(). | Clarified reference: slime = trigger holder; "other" = object entering zone. | "Other" was the friend we made along the way. |
+| Infinite Jumping | Player could jump infinitely like Flappy Bird. | Added grounded check before allowing jumps. | Accidental infinite jetpack mode unlocked! |
+| Ramp Gravity Snapping | Falling from a ramp caused unnatural snapping effect. | Adjusted gravity calculations and ensured smooth velocity transition. | When Unity physics takes "teleportation" a bit too seriously. |
 ---
 
 
@@ -159,21 +162,62 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | Dynamic       | Resistance when object is moving 🛷          |
 | Static        | Resistance before object starts moving 🏋️    |
 
+### Week 4
+#### Character Controller vs. Capsule Collider
+| Feature | Explanation |
+|---------|------------|
+| Character Controller | Has built-in movement handling, not affected by physics. |
+| Capsule Collider | Simple physics object, needs manual movement scripting. |
+
+#### SimpleMove vs. Move
+| Feature | Explanation |
+|---------|------------|
+| SimpleMove | Includes delta time, applies gravity automatically. |
+| Move | Requires manual gravity handling and physics calculations. |
+
+#### Update vs. FixedUpdate
+| Feature | Explanation |
+|---------|------------|
+| Update | Frame-dependent; used for UI and non-physics logic. |
+| FixedUpdate | Runs at a fixed timestep; used for physics-related updates. |
+
+#### Gravity Acceleration
+| Concept | Explanation |
+|---------|------------|
+| Gravity Effect | Gravity isn't a fixed velocity—it accumulates over time. |
+| Acceleration Impact | Acceleration builds up, making movement feel natural. |
+
+#### Slope Limit vs. Step Offset
+| Feature | Explanation |
+|---------|------------|
+| Slope Limit | Determines the max incline the character can walk up. |
+| Step Offset | Defines how high a character can step without jumping. |
+
+#### Shock Physics
+| Concept | Explanation |
+|---------|------------|
+| Shock Force | A sudden application of force instead of gradual acceleration. |
+| Use Case | Used for instant bursts of movement, like explosions. |
+
+#### Heightmaps
+| Feature | Explanation |
+|---------|------------|
+| Grayscale Heightmap | White = highest, black = lowest; used to generate terrain. |
+| Application | Imported into Unity to create realistic landscape elevation. |
+
 ---
 
 
 ## 💡 Future Ideas & Experiments
-| Week  | Idea/Experiment                                | Why It’s Cool                                           |
-|-------|------------------------------------------------|---------------------------------------------------------|
-| Week 2| Player-specific lighting layers                | Puzzle game magic: different players see different worlds|
-|       | Torchlight revealing hidden objects            | Horror/puzzle design perfection                         |
-|       | Output camera feed to secondary device         | Create a director's monitor feel                        |
-|       | Cookie textures with alpha & color             | Beautiful dynamic lighting                              |
-| Week 3| Create a creepy snap-based character           | Horror + comedy = chef's kiss!                          |
-|       | Double-layer trigger tests                     | Compare logic collider effects                           |
-|       | Light filters & colored cookies                | Mood lighting experiments!                              |
-|       | Gravity alteration zones                       | Physics playground fun!                                 |
-|       | Display camera output on in-game screens       | Immersive tech magic!                                   |
-
+| Week | Idea/Experiment | Why It’s Cool |
+|------|---------------|--------------|
+| **Week 2** | Light scenes for one player using layers | Mystery game where Player 1 sees hidden clues! 🔦 |
+| | Torch reveals hidden objects | Perfect for puzzle or horror games 👀 |
+| **Week 3** | Test colored cookies with alpha | Adds rainbow effects and dynamic shadows 🌈 |
+| | Dual-layer lighting for hidden/exposed objects | Example: torch reveals "secret" walls! 🔦 |
+| | Camera output on UI devices | Display camera feed on in-game tablets 📱 |
+| **Week 4** | Implement Shock Physics | Sudden force application for instant motion 💥 |
+| | Create "Flappy Bird Mode" | Switch between flying & normal jump modes 🕊️ |
+| | Use real-world extreme terrain heightmap | See how Unity handles huge elevation differences 🏔️ |
 
 

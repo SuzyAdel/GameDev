@@ -4,7 +4,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float speed = 2.0f;
-    //public Camera cam;
+    public Camera cam; // used as internal 1st or 3rd person camera based on the vector 
     public GameObject fallingObject;
 
     private float oneSecond = 0.1f;
@@ -25,11 +25,13 @@ public class Move : MonoBehaviour
     {
         inTriggerZone = true;
         oneSecond = 0.1f;
+        Debug.Log(other.name + "enter");
     }
 
     private void OnTriggerExit(Collider other)
     {
         inTriggerZone = false;
+        Debug.Log(other.name + "exist");
     }
 
     private void FixedUpdate()
@@ -42,9 +44,8 @@ public class Move : MonoBehaviour
                 GameObject tmp = GameObject.Instantiate(fallingObject, gameObject.transform.position + new Vector3(0, 3, 0),
                 Quaternion.identity);
                 Debug.Log(gameObject.transform.position);
-                tmp.GetComponent<Renderer>().material.color = new Color(Random.value, Random.value,
-                    Random.value);
-                // Debug.Log(other.name + " OnStay");
+                tmp.GetComponent<Renderer>().material.color = new Color(Random.value, Random.value, Random.value);
+                Debug.Log(" OnStay");
             }
             oneSecond -= Time.deltaTime;
         }
@@ -78,9 +79,9 @@ public class Move : MonoBehaviour
         Vector3 moveAndJump = moveVector * speed;
         moveAndJump.y = yWithGravity;
 
-        //characterController.Move(moveAndJump * Time.deltaTime);
+        characterController.Move(moveAndJump * Time.deltaTime);// this allows jump and move at the same time
 
-        characterController.SimpleMove(moveVector * speed);
+        //characterController.SimpleMove(moveVector * speed); //has restrictions on the y axis thus cant apply jump in simple jump 
 
         if (moveVector != Vector3.zero)
         {
@@ -88,8 +89,10 @@ public class Move : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lookAt, 360 * Time.deltaTime);
         }
 
-        //cam.transform.position = gameObject.transform.position + new Vector3(0, 1, -5);
-       // cam.transform.LookAt(gameObject.transform);
+        cam.transform.position = gameObject.transform.position + new Vector3(0, 1, 5); 
+        // 5 units behind the player, 1st person view 
+        // -5 units behind the player, 3rd person view
+        cam.transform.LookAt(gameObject.transform);
 
 
 

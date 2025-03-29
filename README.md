@@ -1,12 +1,6 @@
 # Unity Game Development Learning Journey 🚀
 Learning Unity physics, scripting, and game dev one bug at a time — with memes, color, and questionable experiments.
 
-![image](https://github.com/user-attachments/assets/9e1a39a9-0285-4bb8-b39a-934b008b44ed)
-
-
-![image](https://github.com/user-attachments/assets/16768694-4a3f-4a71-8c59-20badeb44445)
-
-
 ## 🗂️ Master Table of Contents
 | Week | Topics Covered |
 |------|---------------|
@@ -15,6 +9,16 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | **Week 3** | Maps (Base, Normal, Height), Light Types, Rigidbody Damping, Collision Detection, Friction |
 | **Week 4** | Character Controller, Player Movement, Jump Physics, Gravity, FixedUpdate vs. Update, Terrain Heightmaps |
 ---
+
+## Last Glass Catastrophe🔥💔
+
+![image](https://github.com/user-attachments/assets/9e1a39a9-0285-4bb8-b39a-934b008b44ed)
+
+
+![image](https://github.com/user-attachments/assets/16768694-4a3f-4a71-8c59-20badeb44445)
+
+
+
 
 
 ## 📚 Technical Concepts & Fun Tips
@@ -224,6 +228,8 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | **Week 4** | Implement Shock Physics | Sudden force application for instant motion 💥 |
 | | Create "Flappy Bird Mode" | Switch between flying & normal jump modes 🕊️ |
 | | Use real-world extreme terrain heightmap | See how Unity handles huge elevation differences 🏔️ |
+
+## The Previous Spiral 🌀⏳
 
 ![image](https://github.com/user-attachments/assets/23c59097-ca64-43d5-a639-294ce56e2767)
 

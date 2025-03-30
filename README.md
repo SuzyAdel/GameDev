@@ -12,12 +12,16 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 
 ## Last Glass Catastrophe🔥💔
 
+Made a vicious spike collider that ruthlessly destroys any ball daring to fall on it—until I figure out how to make them burst into glorious, dramatic explosions. Also generated a maze script… which, uh, kinda exists but isn't exactly *mazey* yet. Work in progress. 😅
 
+## Maze Not Mazing
+-When the walls exist but the logic took a day off
 ![image](https://github.com/user-attachments/assets/aa90d413-59a6-4a26-aafe-37db3671c028)
 
 ![image](https://github.com/user-attachments/assets/4328bbf6-d460-4c93-b990-ad1a90598aba)
 
-
+## Antarctica: Slippery Code Edition
+–A winter wonderland of bugs, where even my logic froze. ❄️
 
 ## 📚 Technical Concepts & Fun Tips
 
@@ -227,13 +231,15 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | | Create "Flappy Bird Mode" | Switch between flying & normal jump modes 🕊️ |
 | | Use real-world extreme terrain heightmap | See how Unity handles huge elevation differences 🏔️ |
 
-## The Previous Spiral 🌀⏳
+## The Previous Spirals 🌀⏳
 
+Here’s a screenshot to immortalize the absolute chaos—proof that my first attempt didn’t just fail, it spectacularly failed. Exposing my own mess so future me has no choice but to fix it. 😂
+## Antarctica: Slippery Code Edition
 ![image](https://github.com/user-attachments/assets/9e1a39a9-0285-4bb8-b39a-934b008b44ed)
-
 
 ![image](https://github.com/user-attachments/assets/16768694-4a3f-4a71-8c59-20badeb44445)
 
+## Maze Not Mazing
 ![image](https://github.com/user-attachments/assets/23c59097-ca64-43d5-a639-294ce56e2767)
 
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)

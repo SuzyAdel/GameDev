@@ -12,12 +12,10 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 
 ## Last Glass Catastrophe🔥💔
 
-![image](https://github.com/user-attachments/assets/9e1a39a9-0285-4bb8-b39a-934b008b44ed)
 
+![image](https://github.com/user-attachments/assets/aa90d413-59a6-4a26-aafe-37db3671c028)
 
-![image](https://github.com/user-attachments/assets/16768694-4a3f-4a71-8c59-20badeb44445)
-
-
+![image](https://github.com/user-attachments/assets/4328bbf6-d460-4c93-b990-ad1a90598aba)
 
 
 
@@ -230,6 +228,11 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | | Use real-world extreme terrain heightmap | See how Unity handles huge elevation differences 🏔️ |
 
 ## The Previous Spiral 🌀⏳
+
+![image](https://github.com/user-attachments/assets/9e1a39a9-0285-4bb8-b39a-934b008b44ed)
+
+
+![image](https://github.com/user-attachments/assets/16768694-4a3f-4a71-8c59-20badeb44445)
 
 ![image](https://github.com/user-attachments/assets/23c59097-ca64-43d5-a639-294ce56e2767)
 

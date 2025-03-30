@@ -23,6 +23,10 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 ## Antarctica: Slippery Code Edition
 –A winter wonderland of bugs, where even my logic froze. ❄️
 
+![WhatsApp Image 2025-03-30 at 16 33 26_4df472d4](https://github.com/user-attachments/assets/ab6af4eb-9918-4289-ab24-bf4bcce2d11d)
+![image](https://github.com/user-attachments/assets/ca464010-fd14-4fa8-aec0-f2f975d83a36)
+
+
 ## 📚 Technical Concepts & Fun Tips
 
 ## Technical Concepts & Fun Tips 🛠️✨

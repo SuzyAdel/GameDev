@@ -178,7 +178,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Static        | Resistance before object starts moving 🏋️    |
 
 ### Week 4
-#### Character Controller vs. Capsule Collider
+#### Character Controller vs. Capsule Collider 🏗️
 | Feature | Explanation |
 |---------|------------|
 | Character Controller | Has built-in movement handling, not affected by physics. |
@@ -208,7 +208,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Slope Limit | Determines the max incline the character can walk up. |
 | Step Offset | Defines how high a character can step without jumping. |
 
-#### Shock Physics
+#### Shock Physics 🛠️✨
 | Concept | Explanation |
 |---------|------------|
 | Shock Force | A sudden application of force instead of gradual acceleration. |

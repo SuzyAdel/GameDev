@@ -248,3 +248,4 @@ Here’s a screenshot to immortalize the absolute chaos—proof that my first at
 
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
+7th quiz 

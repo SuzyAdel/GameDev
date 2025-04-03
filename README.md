@@ -249,3 +249,4 @@ Here’s a screenshot to immortalize the absolute chaos—proof that my first at
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
 7th quiz 
+![image](https://github.com/user-attachments/assets/c3057406-fc14-4e02-ae79-e4313c35b1f1)

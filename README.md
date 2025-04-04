@@ -248,13 +248,49 @@ Here’s a screenshot to immortalize the absolute chaos—proof that my first at
 
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
-7th quiz - steps
-terrian 
+7th quiz - THE REAL TEST!🚀
+
+A magical sphere must climb a dangerous mountain to reach the Summit Portal, a mysterious 
+gateway at the peak. But the journey is not easy, as huge rocks fall from above, threatening to break its 
+protective blue shield. 
+To survive, the sphere must dodge falling rocks while collecting blue shards, which restore lost parts 
+of its shield. Every hit from a rock weakens the shield, making the climb even riskier. 
+As the sphere ascends, the mountain becomes more dangerous. Reaching the summit will take skill, 
+quick reflexes, and smart use of the shards. 
+Can the sphere overcome the mountain’s challenges and complete its journey ? 
+
+💡 Beyond the Basics – Where I pushed boundaries and added extra flair.
+
+1. Terrian 
 ![image](https://github.com/user-attachments/assets/c3057406-fc14-4e02-ae79-e4313c35b1f1)
 ![image](https://github.com/user-attachments/assets/8d67f8f2-ee96-4cd4-b06f-106726587b16)
-![image](https://github.com/user-attachments/assets/23cd01a8-9a71-482e-902c-f5e4f9127b50)
-trees 
+![image](https://github.com/user-attachments/assets/cae165cb-81f1-47a2-921f-6684484f5311)
+
+💡Extra: soft blending attempt by integration of heightmap script "smoothlayers", billboard start further , max mesh trees , detail distance , project setings shdow distance slight increase 
+💡Extra: for better visuals and gameplay, 
+
+a] fog - to later complement rain 
+
+![image](https://github.com/user-attachments/assets/a715aa93-deef-4dea-89d8-2dc264c1bd2c)
+
+b] rain sound to later complement it 
+
+c] rain 
+https://www.youtube.com/watch?v=MBVGUD5nZeA
+
+3. Trees 
 ![image](https://github.com/user-attachments/assets/81ab7c7b-cb99-4b79-928b-5e8a36823d1c)
 ![image](https://github.com/user-attachments/assets/b28b315b-e021-46e0-8b5a-cefb5bab1830)
+![image](https://github.com/user-attachments/assets/9a6b657c-86d7-4434-ad34-710d2fc0af1f)
+![image](https://github.com/user-attachments/assets/347b7144-1d55-43b4-aedc-7c78cc0f3573)
+
+💡Extra: I added a bend factor to give a natural motion 
+
+5. Wind 
+EAST direction
+
+![image](https://github.com/user-attachments/assets/122be97b-c53c-4f2a-9fbf-bd9776c18689)
+
+![image](https://github.com/user-attachments/assets/c852a75a-e3e3-404b-aae4-ac8a6553c133)
 
 

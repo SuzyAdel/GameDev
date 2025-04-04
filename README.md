@@ -254,10 +254,7 @@ terrian
 ![image](https://github.com/user-attachments/assets/8d67f8f2-ee96-4cd4-b06f-106726587b16)
 ![image](https://github.com/user-attachments/assets/23cd01a8-9a71-482e-902c-f5e4f9127b50)
 trees 
-![image](https://github.com/user-attachments/assets/a4d52baa-5211-428d-8406-8e475ce3bb74)
-![image](https://github.com/user-attachments/assets/6f20ae1e-3c15-4fe0-aa56-e114e2f66784)
-![image](https://github.com/user-attachments/assets/1e6509c7-2486-48f5-a8d3-f15997d119a6)
-![image](https://github.com/user-attachments/assets/1d8c7ba9-37cd-458e-a335-c7cbfcd7172b)
-![image](https://github.com/user-attachments/assets/3ddeee96-1560-4dde-a442-84219ca6224a)
+![image](https://github.com/user-attachments/assets/81ab7c7b-cb99-4b79-928b-5e8a36823d1c)
+![image](https://github.com/user-attachments/assets/b28b315b-e021-46e0-8b5a-cefb5bab1830)
 
 

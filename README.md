@@ -294,3 +294,25 @@ EAST direction
 ![image](https://github.com/user-attachments/assets/c852a75a-e3e3-404b-aae4-ac8a6553c133)
 
 
+6. 3rd person camera
+![image](https://github.com/user-attachments/assets/0e49aa62-a6e0-4f6f-a398-41a8646150cf)
+
+7. Portal
+![image](https://github.com/user-attachments/assets/f9b0114a-b034-45d3-afc9-0499198c1167)
+![image](https://github.com/user-attachments/assets/63d7b086-b833-4be7-97a5-7ca257ffc66f)
+
+hard shadow choice because ..
+
+9. enviroment lighting and fog update shadow settings 
+![image](https://github.com/user-attachments/assets/f822cb67-b665-4a6b-ad18-1aac347c0f27)
+![image](https://github.com/user-attachments/assets/4c2e7032-3dd6-4e3e-938a-f82a1aea2393)
+
+10.magical sphere 
+![image](https://github.com/user-attachments/assets/aaaf3034-36a2-412f-b7ce-130c9d1d417f)
+
+11.shaders 
+![image](https://github.com/user-attachments/assets/398078f6-ffb8-4d16-b950-749e9beb1b6e)
+
+12. Rain
+ ![image](https://github.com/user-attachments/assets/2c111373-9fef-43bf-8873-fe34016cb272)
+

@@ -312,7 +312,7 @@ hard shadow choice because didnt want to have a haevy game , trying to maintiant
 
 11.shaders 
 ![image](https://github.com/user-attachments/assets/398078f6-ffb8-4d16-b950-749e9beb1b6e)
-
+not the best changes yet 
 12. Rain
  ![image](https://github.com/user-attachments/assets/2c111373-9fef-43bf-8873-fe34016cb272)
 

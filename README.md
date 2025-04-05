@@ -301,7 +301,7 @@ EAST direction
 ![image](https://github.com/user-attachments/assets/f9b0114a-b034-45d3-afc9-0499198c1167)
 ![image](https://github.com/user-attachments/assets/63d7b086-b833-4be7-97a5-7ca257ffc66f)
 
-hard shadow choice because ..
+hard shadow choice because didnt want to have a haevy game , trying to maintianthe preformance 
 
 9. enviroment lighting and fog update shadow settings 
 ![image](https://github.com/user-attachments/assets/f822cb67-b665-4a6b-ad18-1aac347c0f27)

@@ -300,25 +300,29 @@ EAST direction
 6. 3rd person camera
 ![image](https://github.com/user-attachments/assets/0e49aa62-a6e0-4f6f-a398-41a8646150cf)
 ![image](https://github.com/user-attachments/assets/02eb5ff7-9668-4359-8adf-7b990ac76bc0)
-I chosse 3 rings orbit follow and adjusted values to have the best playable prespectives 
-8. Portal
+I chosse 3 rings orbit follow and adjusted values to have the best playable prespectives
+
+7. Portal
 ![image](https://github.com/user-attachments/assets/f9b0114a-b034-45d3-afc9-0499198c1167)
 ![image](https://github.com/user-attachments/assets/63d7b086-b833-4be7-97a5-7ca257ffc66f)
+![image](https://github.com/user-attachments/assets/4f609455-b933-4d28-af2d-41f6a2e998b0)
+I added Blinkking effect that is not on of striaght away 
+
 
 hard shadow choice because didnt want to have a haevy game , trying to maintianthe preformance 
 
-9. enviroment lighting and fog update shadow settings 
+8. enviroment lighting and fog update shadow settings 
 ![image](https://github.com/user-attachments/assets/f822cb67-b665-4a6b-ad18-1aac347c0f27)
 ![image](https://github.com/user-attachments/assets/4c2e7032-3dd6-4e3e-938a-f82a1aea2393)
 
-10.magical sphere 
+9.magical sphere 
 ![image](https://github.com/user-attachments/assets/aaaf3034-36a2-412f-b7ce-130c9d1d417f)
 
-11.shaders 
+10.shaders 
 ![image](https://github.com/user-attachments/assets/398078f6-ffb8-4d16-b950-749e9beb1b6e)
 not the best changes yet 
 
-12. Rain
+11. Rain
 ![image](https://github.com/user-attachments/assets/2c111373-9fef-43bf-8873-fe34016cb272)
 ![image](https://github.com/user-attachments/assets/85509a60-f5cd-46c9-a64d-0964ddd3a8d7)
 🎛️ System Configuration

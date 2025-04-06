@@ -299,8 +299,9 @@ EAST direction
 
 6. 3rd person camera
 ![image](https://github.com/user-attachments/assets/0e49aa62-a6e0-4f6f-a398-41a8646150cf)
-
-7. Portal
+![image](https://github.com/user-attachments/assets/02eb5ff7-9668-4359-8adf-7b990ac76bc0)
+I chosse 3 rings orbit follow and adjusted values to have the best playable prespectives 
+8. Portal
 ![image](https://github.com/user-attachments/assets/f9b0114a-b034-45d3-afc9-0499198c1167)
 ![image](https://github.com/user-attachments/assets/63d7b086-b833-4be7-97a5-7ca257ffc66f)
 

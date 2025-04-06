@@ -325,6 +325,13 @@ hard shadow choice because didnt want to have a haevy game , trying to maintiant
 ![image](https://github.com/user-attachments/assets/aaaf3034-36a2-412f-b7ce-130c9d1d417f)
 ![image](https://github.com/user-attachments/assets/534f4207-775c-4dfa-bfcb-9e9a1cd514cc)
 ![image](https://github.com/user-attachments/assets/889e08fa-e92d-4691-a165-aaff5332efee)
+MOVEMENT - 
+- No Flappy Bird Jumping: The jump is now restricted to grounded states only. Once the player jumps, they cannot jump again until they hit the ground.
+
+-  Movement via Torque: The movement uses torque instead of linear forces, simulating a natural rolling effect.
+
+- Grounded Check: The isGrounded check ensures that jumping only happens when the player is actually touching the ground, preventing infinite jumps.
+
 
 
 10.shaders 
@@ -332,7 +339,12 @@ hard shadow choice because didnt want to have a haevy game , trying to maintiant
 ![image](https://github.com/user-attachments/assets/398078f6-ffb8-4d16-b950-749e9beb1b6e)
 not the best changes yet 
 
-11. Rain
+11. Game Dynamics & Logic 
+Falling objects and collsion
+
+
+
+. Rain
     
 ![image](https://github.com/user-attachments/assets/2c111373-9fef-43bf-8873-fe34016cb272)
 ![image](https://github.com/user-attachments/assets/85509a60-f5cd-46c9-a64d-0964ddd3a8d7)

@@ -281,7 +281,9 @@ c] 💡 Rain Particle System
 
 https://www.youtube.com/watch?v=MBVGUD5nZeA
 
-3. Trees 
+3. Trees
+
+   
 ![image](https://github.com/user-attachments/assets/81ab7c7b-cb99-4b79-928b-5e8a36823d1c)
 ![image](https://github.com/user-attachments/assets/b28b315b-e021-46e0-8b5a-cefb5bab1830)
 ![image](https://github.com/user-attachments/assets/9a6b657c-86d7-4434-ad34-710d2fc0af1f)
@@ -318,14 +320,20 @@ hard shadow choice because didnt want to have a haevy game , trying to maintiant
 ![image](https://github.com/user-attachments/assets/4c2e7032-3dd6-4e3e-938a-f82a1aea2393)
 
 
-9.magical sphere 
+9.Magic Sphere 
+
 ![image](https://github.com/user-attachments/assets/aaaf3034-36a2-412f-b7ce-130c9d1d417f)
+![image](https://github.com/user-attachments/assets/534f4207-775c-4dfa-bfcb-9e9a1cd514cc)
+![image](https://github.com/user-attachments/assets/889e08fa-e92d-4691-a165-aaff5332efee)
+
 
 10.shaders 
+
 ![image](https://github.com/user-attachments/assets/398078f6-ffb8-4d16-b950-749e9beb1b6e)
 not the best changes yet 
 
 11. Rain
+    
 ![image](https://github.com/user-attachments/assets/2c111373-9fef-43bf-8873-fe34016cb272)
 ![image](https://github.com/user-attachments/assets/85509a60-f5cd-46c9-a64d-0964ddd3a8d7)
 🎛️ System Configuration

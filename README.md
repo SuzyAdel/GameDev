@@ -269,13 +269,15 @@ Can the sphere overcome the mountain’s challenges and complete its journey ?
 💡 Beyond the Basics: soft blending attempt by integration of heightmap script "smoothlayers", billboard start further , max mesh trees , detail distance , project setings shdow distance slight increase 
 💡 Beyond the Basics: for better visuals and gameplay, 
 
-a] Fog - to later complement rain 
+a] 💡Fog - to later complement rain 
 
 ![image](https://github.com/user-attachments/assets/a715aa93-deef-4dea-89d8-2dc264c1bd2c)
 
-b] Rain sound to later complement it 
+b]💡 Rain Sound to compliemnt it ☔
+![image](https://github.com/user-attachments/assets/8f4c67fc-f8ee-45c1-8bd2-bc6004e82278)
 
-c] ☔ Rain Particle System
+
+c] 💡 Rain Particle System
 
 https://www.youtube.com/watch?v=MBVGUD5nZeA
 
@@ -359,3 +361,4 @@ not the best changes yet
 I didn’t just make particles— I engineered weather 🌧️🛠️
 
 💡 Beyond the Basics : added rain sound to complement the rainfall 
+

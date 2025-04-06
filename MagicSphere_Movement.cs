@@ -1,102 +1,111 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem; // Added for Input System
+using UnityEngine;
 
 public class MagicSphereMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    public float moveSpeed = 50f;
-    public float sprintSpeed = 100f;
-    public float maxSpin = 100f;
+    [Header("Movement Settings")]
+    public float walkSpeed = 50f;               // Torque multiplier when walking (default movement)
+    public float sprintSpeed = 100f;            // Torque multiplier when holding Left Shift (sprint)
+    public float maxAngularVelocity = 100f;     // Cap the angular velocity to prevent unrealistic spinning
 
-    [Header("Jump")]
-    public float jumpPower = 50f;
-    public float sprintJumpPower = 100f;
-    public float groundCheckDistance = 0.6f;
-    public LayerMask groundMask; // Corrected variable name
+    [Header("Jump Settings")]
+    public float jumpForce = 50f;               // Jump force when standing still or walking
+    public float sprintJumpForce = 100f;        // Jump force when sprinting (running jump)
+    public float groundCheckRadius = 0.6f;      // Radius of sphere used to detect ground collision
+    public LayerMask groundMask;                // Mask to filter what counts as ground (e.g., "Ground" layer)
 
     private Rigidbody rb;
     private Camera mainCamera;
-    private Vector2 moveInput; // Added for Input System
+    private bool isGrounded;                    // Caches grounded state to be used each frame
 
     void Start()
     {
+        // Cache references to Rigidbody and Main Camera
         rb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
 
-        // Limit maximum rotation speed 
-        rb.maxAngularVelocity = maxSpin; // Corrected variable name
+        // Safety checks to catch missing references early
+        if (rb == null)
+            Debug.LogError("Rigidbody not found on object!");
+
+        if (mainCamera == null)
+            Debug.LogError("Main Camera not found in scene!");
+
+        // Set maximum rotation velocity to avoid infinite spinning or physics bugs
+        rb.maxAngularVelocity = maxAngularVelocity;
     }
 
     void Update()
     {
-        // Handle jumping in Update for better responsiveness no flapping
-        if (Input.GetButton("Jump") && IsGrounded()) // Changed Input.GetKeyDown to Input System
+        // Check ground status once per frame to avoid redundant physics calls
+        isGrounded = CheckIfGrounded();
+
+        // Jump only if grounded (prevents double-jumps or mid-air jumps)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            // Apply stronger jump when sprinting by holding Left Shift using sprintJumpPower
-            float force = Keyboard.current.leftShiftKey.isPressed ? sprintJumpPower : jumpPower; // Corrected variable names, and changed Input.GetKey
-            rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            // Use higher jump force when sprinting (Left Shift is held)
+            float appliedJumpForce = Input.GetKey(KeyCode.LeftShift) ? sprintJumpForce : jumpForce;
+
+            // Apply upward impulse to simulate jump using physics
+            rb.AddForce(Vector3.up * appliedJumpForce, ForceMode.Impulse);
         }
     }
 
     void FixedUpdate()
     {
-        Vector3 movement = GetCameraRelativeMovement();
-
-        if (movement != Vector3.zero)
-        {
-            // Apply torque for natural rolling movement which is different
-            // from Unity's default rigidbody movement because it uses torque instead of force which makes it more realistic
-            ApplyMovementTorque(movement);
-        }
+        // Handle player movement in physics step for more consistent motion
+        MovePlayer();
     }
 
-    private bool IsGrounded()
+    void MovePlayer()
     {
-        // Only allow jumping when grounded by raycasting downwards can be done by using a sphere collider 
-        return Physics.Raycast(transform.position, Vector3.down, groundCheckDistance, groundMask); // Corrected variable name
-    }
-
-    private Vector3 GetCameraRelativeMovement()
-    {
+        // Get raw input from Input Manager (Horizontal: A/D, Vertical: W/S)
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        Vector2 input = new Vector2(x, z);
 
-        // Movement relative to camera orientation 
-        Vector3 cameraForward = mainCamera.transform.forward;
-        Vector3 cameraRight = mainCamera.transform.right;
+        // Normalize movement vector to avoid faster diagonal movement
+        Vector3 inputDir = new Vector3(x, 0, z).normalized;
+        if (inputDir == Vector3.zero) return; // Exit early if no input
 
-        // Flatten camera directions which means ignoring y-axis
-        cameraForward.y = 0;
-        cameraRight.y = 0;
-        cameraForward.Normalize();
-        cameraRight.Normalize();
+        // Get camera-relative direction (forward and right vectors)
+        Vector3 camForward = mainCamera.transform.forward;
+        Vector3 camRight = mainCamera.transform.right;
 
-        // Combine and normalize movement direction by camera orientation and input
-        return (cameraForward * input.y + cameraRight * input.x).normalized;
+        // Ignore vertical camera tilt for ground movement
+        camForward.y = 0f;
+        camRight.y = 0f;
+        camForward.Normalize();
+        camRight.Normalize();
+
+        // Combine input and camera orientation for intuitive controls
+        Vector3 moveDir = (camForward * z + camRight * x).normalized;
+
+        // Convert world direction to torque axis (z and x swapped)
+        Vector3 torqueAxis = new Vector3(moveDir.z, 0, -moveDir.x);
+
+        // Choose walking or sprinting speed based on Left Shift input
+        float torqueSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+
+        // Apply torque to simulate rolling in the intended direction
+        rb.AddTorque(torqueAxis * torqueSpeed);
     }
 
-    private void ApplyMovementTorque(Vector3 direction)
+    bool CheckIfGrounded()
     {
-        // Use moveSpeed (50) or sprintSpeed (100) when holding Left Shift
-        float torque = Keyboard.current.leftShiftKey.isPressed ? sprintSpeed : moveSpeed; // Corrected variable names, and changed Input.GetKey
+        // If no groundMask set in inspector, fallback to default 'everything' mask
+        if (groundMask == 0)
+        {
+            Debug.LogWarning("Ground mask not assigned! Defaulting to all layers.");
+            return Physics.CheckSphere(transform.position, groundCheckRadius);
+        }
 
-        // Convert movement direction to torque axis (z and x swapped for proper rolling)
-        Vector3 torqueAxis = new Vector3(direction.z, 0, -direction.x);
-
-        rb.AddTorque(torqueAxis * torque);
+        // Use Physics.CheckSphere to verify if player is touching ground layer
+        return Physics.CheckSphere(transform.position, groundCheckRadius, groundMask);
     }
 
-    // Visualize ground check in editor by raycasting downwards
-    private void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected()
     {
+        // Visualize the ground check radius in editor for easier tweaking
         Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundCheckDistance);
-    }
-
-    // Input System callback for movement
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        moveInput = context.ReadValue<Vector2>();
+        Gizmos.DrawWireSphere(transform.position, groundCheckRadius);
     }
 }

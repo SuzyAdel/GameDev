@@ -305,15 +305,18 @@ I chosse 3 rings orbit follow and adjusted values to have the best playable pres
 7. Portal
 ![image](https://github.com/user-attachments/assets/f9b0114a-b034-45d3-afc9-0499198c1167)
 ![image](https://github.com/user-attachments/assets/63d7b086-b833-4be7-97a5-7ca257ffc66f)
-![image](https://github.com/user-attachments/assets/4f609455-b933-4d28-af2d-41f6a2e998b0)
+![image](https://github.com/user-attachments/assets/c50daabc-dccb-43a2-99a1-346d4f704638)
+
 I added Blinkking effect that is not on of striaght away 
 
 
 hard shadow choice because didnt want to have a haevy game , trying to maintianthe preformance 
 
-8. enviroment lighting and fog update shadow settings 
+8. enviroment lighting and fog update shadow settings
+   
 ![image](https://github.com/user-attachments/assets/f822cb67-b665-4a6b-ad18-1aac347c0f27)
 ![image](https://github.com/user-attachments/assets/4c2e7032-3dd6-4e3e-938a-f82a1aea2393)
+
 
 9.magical sphere 
 ![image](https://github.com/user-attachments/assets/aaaf3034-36a2-412f-b7ce-130c9d1d417f)

@@ -386,6 +386,7 @@ Falling objects and collsion
 - Budget-conscious lifecycle tuning
 
 - Sky-to-ground realism activated
+- made it follow player to minimize performance
 
 I didn’t just make particles— I engineered weather 🌧️🛠️
 

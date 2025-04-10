@@ -375,7 +375,7 @@ not the best changes yet
    
 Falling objects and collsion
 ![image](https://github.com/user-attachments/assets/12c3c43d-6dae-4347-ab23-7088c10ce2d3)
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/87565f5e-b486-4af9-b498-fe004e38cff7)
 
 💡 Beyond the Basics: I applied Torque to induce natural rotation by applying a rotational force
 while direct rotation sets the object's orientation immediately without the need for forces

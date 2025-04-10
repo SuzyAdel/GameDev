@@ -249,10 +249,32 @@ Here’s a screenshot to immortalize the absolute chaos—proof that my first at
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
 7th quiz - THE REAL TEST!🚀
+🎯 Project Scope & Core Elements
 
+Component	Description
+
+🧠 Game Concept	A sphere ascends a mountain, dodges falling rocks, collects blue shards, and reaches a portal to win.
+📦 Key Prefabs	Sphere (Player), Rock, Shard, Portal, Trees
+🎮 Movement	Physics-based rolling using Rigidbody.AddTorque() with acceleration and jump
+🧱 Terrain Setup	Generated via heightmap, textured with terrain layers, and decorated with tree prefabs
+🎥 Camera System	Third-person follow camera with dynamic offset using Camera.main.transform.position and LateUpdate()
+💡 Environment	Soft fog, real-time lighting, ambient wind sounds, and a chill night-skybox
+🔁 Game Loop	Rocks fall from above and deal damage, shards spawn every 5s with 25% chance, player regenerates shield upon collection
+🌀 Portal End	Triggers win condition when player enters
+
+🛠️ Script Summary & Behavior
+Script	Purpose	Key Functions
+MagicSphereMovement.cs	Manages movement, collisions, and jumping	AddTorque(), OnCollisionEnter, AddForce()
+//CameraFollow.cs	Smooth camera follow with slight lag	LateUpdate(), offset logic// CENIMA MACHINE 
+RockSpawner.cs	Spawns rocks at intervals	InvokeRepeating(), destroy rocks when velocity is low
+Rock.cs	Handles rock behavior on collision and self-cleanup	OnCollisionEnter(), IsSleeping()
+ShardSpawner.cs	Spawns shards with 25% probability	Random.value, Instantiate()
+Shard.cs	Detects collision with player, heals shield	OnTriggerEnter(), UI update
+Portal.cs	Ends game upon contact	OnTriggerEnter()
 A magical sphere must climb a dangerous mountain to reach the Summit Portal, a mysterious 
 gateway at the peak. But the journey is not easy, as huge rocks fall from above, threatening to break its 
 protective blue shield. 
+
 To survive, the sphere must dodge falling rocks while collecting blue shards, which restore lost parts 
 of its shield. Every hit from a rock weakens the shield, making the climb even riskier. 
 As the sphere ascends, the mountain becomes more dangerous. Reaching the summit will take skill, 

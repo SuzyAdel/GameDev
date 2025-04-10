@@ -444,4 +444,6 @@ SCRIPTS
 The rocks are instantiated with no initial rotation to maintain randomness in their falling behavior. 
  The logic allows for continuous spawning of rocks until the game ends or the spawning is stopped.
 
+- The ShardSpawner script spawns magical shards with a 25% probability every 5 seconds. The shards are randomly chosen from the available prefabs and spawn at random positions on the X and Z axes within specified ranges, with a fixed height on the Y-axis. The shards do not get destroyed, and they are unaffected by other elements like falling rocks.
+
 -

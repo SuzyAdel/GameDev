@@ -283,6 +283,12 @@ Can the sphere overcome the mountain’s challenges and complete its journey ?
 
 💡 Beyond the Basics – Where I pushed boundaries and added extra flair.
 
+✅ Sound effects for rain falling 
+✅ Sound effects for rock impact and shard pickup
+✅ Simple UI with health/shield bar and shard count
+
+
+
 1. Terrian 
 ![image](https://github.com/user-attachments/assets/c3057406-fc14-4e02-ae79-e4313c35b1f1)
 ![image](https://github.com/user-attachments/assets/8d67f8f2-ee96-4cd4-b06f-106726587b16)
@@ -303,7 +309,7 @@ c] 💡 Rain Particle System
 
 https://www.youtube.com/watch?v=MBVGUD5nZeA
 
-3. Trees
+2. Trees
 
    
 ![image](https://github.com/user-attachments/assets/81ab7c7b-cb99-4b79-928b-5e8a36823d1c)
@@ -313,7 +319,7 @@ https://www.youtube.com/watch?v=MBVGUD5nZeA
 
 💡 Beyond the Basics: I added a bend factor to give a natural motion 
 
-5. Wind 
+3. Wind 
 EAST direction
 
 ![image](https://github.com/user-attachments/assets/122be97b-c53c-4f2a-9fbf-bd9776c18689)
@@ -321,12 +327,15 @@ EAST direction
 ![image](https://github.com/user-attachments/assets/c852a75a-e3e3-404b-aae4-ac8a6553c133)
 
 
-6. 3rd person camera
+4. 3rd person camera
 ![image](https://github.com/user-attachments/assets/0e49aa62-a6e0-4f6f-a398-41a8646150cf)
 ![image](https://github.com/user-attachments/assets/02eb5ff7-9668-4359-8adf-7b990ac76bc0)
 I chosse 3 rings orbit follow and adjusted values to have the best playable prespectives
+![image](https://github.com/user-attachments/assets/35fb1fbb-2246-4a56-9a69-bceeeaddf420)
 
-7. Portal
+u[dated to see the rocks falling 
+
+4. Portal
 ![image](https://github.com/user-attachments/assets/f9b0114a-b034-45d3-afc9-0499198c1167)
 ![image](https://github.com/user-attachments/assets/63d7b086-b833-4be7-97a5-7ca257ffc66f)
 ![image](https://github.com/user-attachments/assets/c50daabc-dccb-43a2-99a1-346d4f704638)
@@ -336,13 +345,13 @@ I added Blinkking effect that is not on of striaght away
 
 hard shadow choice because didnt want to have a haevy game , trying to maintianthe preformance 
 
-8. enviroment lighting and fog update shadow settings
+5. enviroment lighting and fog update shadow settings
    
 ![image](https://github.com/user-attachments/assets/f822cb67-b665-4a6b-ad18-1aac347c0f27)
 ![image](https://github.com/user-attachments/assets/4c2e7032-3dd6-4e3e-938a-f82a1aea2393)
 
 
-9.Magic Sphere 
+6.Magic Sphere 
 
 ![image](https://github.com/user-attachments/assets/aaaf3034-36a2-412f-b7ce-130c9d1d417f)
 ![image](https://github.com/user-attachments/assets/534f4207-775c-4dfa-bfcb-9e9a1cd514cc)
@@ -356,18 +365,18 @@ MOVEMENT -
 
 
 
-10.shaders 
+7.shaders 
 
 ![image](https://github.com/user-attachments/assets/398078f6-ffb8-4d16-b950-749e9beb1b6e)
 not the best changes yet 
 
-11. Game Dynamics & Logic 
+8. Game Dynamics & Logic 
 Falling objects and collsion
 ![image](https://github.com/user-attachments/assets/12c3c43d-6dae-4347-ab23-7088c10ce2d3)
 
 
 
-. Rain
+9. Rain
     
 ![image](https://github.com/user-attachments/assets/2c111373-9fef-43bf-8873-fe34016cb272)
 ![image](https://github.com/user-attachments/assets/85509a60-f5cd-46c9-a64d-0964ddd3a8d7)

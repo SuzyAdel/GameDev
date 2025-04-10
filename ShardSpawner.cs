@@ -1,47 +1,77 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShardSpawner : MonoBehaviour
 {
-    // 25% probability of spawning a shard every 5 seconds
-    public GameObject[] shardPrefabs; // Array to store shard prefabs
-    public float spawnInterval = 5f; // Time interval between spawns
-    public float spawnRangeX = 10f; // Range for random X-axis position
-    public float spawnRangeZ = 10f; // Range for random Z-axis position
-    public float spawnHeight = 40f; // Fixed Y-axis height for shard spawn
+    
+    public GameObject[] shardPrefabs;  // The array of shard prefabs to randomly spawn
+    public Transform player; 
+    public float spawnHeight = 40f;// Fixed Y spawn height for the shards (can be adjusted in the Inspector)
+    public float spawnRateMin = 0.1f;  // Minimum time between spawns 
+    public float spawnRateMax = 0.5f; // Maximum time between spawns 
 
-    private void Start()
+    // Probability for shard spawning (25%)
+    private float spawnProbability = 0.25f;
+    private bool isSpawning = false;
+
+    void Start()
     {
-        // Start spawning shards at regular intervals
-        InvokeRepeating("TrySpawnShard", 0f, spawnInterval);
+        // Start spawning after a short delay
+        Invoke(nameof(StartSpawning), 5f);
     }
 
-    // Function that tries to spawn a shard based on a 25% probability
-    void TrySpawnShard()
+    void StartSpawning()
     {
-        // 25% chance to spawn a shard
-        if (Random.value <= 0.25f)
+        isSpawning = true;
+        // Repeatedly attempt to spawn a shard at random intervals
+        InvokeRepeating(nameof(AttemptSpawnShard), 0f, Random.Range(spawnRateMin, spawnRateMax));
+    }
+
+    // Attempt to spawn a shard based on a random 25% chance
+    void AttemptSpawnShard()
+    {
+        if (!isSpawning || shardPrefabs.Length == 0 || player == null)
+            return;
+
+        // Generate a random number (0-1) to determine spawn chance
+        float randomValue = Random.value;
+
+        // If random chance <= spawn probability, spawn the shard
+        if (randomValue <= spawnProbability)
         {
             SpawnShard();
         }
-        Debug.Log("Random Value: " + Random.value);
-
     }
 
-    // Function to spawn a shard at a random position within specified range
+    // Handles the actual spawning of the shard at a random position
     void SpawnShard()
     {
-        // Random position for the shard
-        Vector3 spawnPosition = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnHeight, Random.Range(30f, spawnRangeZ));
-
-        // Randomly select a shard prefab
+        // Randomly select a shard prefab from the list
         GameObject shardPrefab = shardPrefabs[Random.Range(0, shardPrefabs.Length)];
 
-        // Instantiate the shard at the random position
-        Instantiate(shardPrefab, spawnPosition, Quaternion.identity);
-        Debug.Log("Spawning shard...");
-        Debug.Log("Spawning shard at position: " + shardPrefab.transform.position);
+        // Calculate random spawn position relative to the player
+        Vector3 forward = player.forward.normalized;
+        Vector3 spawnOffset = forward * Random.Range(30f, 40f);  // Z axis offset
+        spawnOffset += player.right * Random.Range(-10f, 10f);   // X axis offset
 
+        Vector3 spawnPosition = player.position + spawnOffset;  // Final position
+        spawnPosition.y = spawnHeight; // Keep Y axis fixed at spawnHeight
+
+        // Instantiate the shard at the calculated position with no rotation
+        GameObject shard = Instantiate(shardPrefab, spawnPosition, Quaternion.identity);
+
+        // Apply random torque again for realistic falling behavior (if the shard has a Rigidbody)
+        Rigidbody rb = shard.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            Vector3 randomTorque = new Vector3(
+                Random.Range(-200f, 200f),
+                Random.Range(-200f, 200f),
+                Random.Range(-200f, 200f)
+            );
+            rb.AddTorque(randomTorque);
+        }
+
+        // Debugging output for spawn position (you can remove this in production)
+        //Debug.Log($"Spawning shard at position: {spawnPosition}");
     }
 }

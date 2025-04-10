@@ -2,125 +2,100 @@ using UnityEngine;
 
 public class MagicSphereMovement : MonoBehaviour
 {
+    // Movement Settings: Adjusts walking and sprinting speeds.
     [Header("Movement Settings")]
-    // Normal walking speed applied as torque
-    public float walkSpeed = 50f;
-    // Sprinting speed applied as torque when Left Shift is held
-    public float sprintSpeed = 100f;
-    // Maximum angular velocity (rotation speed) for the sphere to avoid extreme spins
-    public float maxAngularVelocity = 100f;
+    public float walkSpeed = 50f;                // Speed applied when walking (applies torque for rolling)
+    public float sprintSpeed = 100f;             // Speed applied when sprinting (applies torque for rolling)
+    public float maxAngularVelocity = 100f;     // Max angular velocity to limit extreme spinning
 
+    // Jump Settings: Configures forces for jumping while walking or sprinting.
     [Header("Jump Settings")]
-    // Jump force when the player presses the jump button (Spacebar) while grounded
-    public float jumpForce = 50f;
-    // Jump force when the player is sprinting (holding Left Shift) and presses Spacebar
-    public float sprintJumpForce = 100f;
-    // LayerMask for detecting ground objects (used for checking if player is grounded)
-    public LayerMask groundMask;
-    // Boolean to check if the player is grounded or not
-    private bool isGrounded = false;
+    public float jumpForce = 50f;               // Jump force when walking
+    public float sprintJumpForce = 100f;        // Jump force when sprinting
+    public LayerMask groundMask;                // Layer mask to detect ground objects
+    bool isGrounded = false;                    // Boolean to check if the sphere is grounded
 
-    private Rigidbody rb; // The Rigidbody component used for applying physics forces
-    private Camera mainCamera; // The main camera used to get relative movement direction
+    Rigidbody rb;                               // Reference to the Rigidbody for applying forces
 
-    private void Start()
+    // Initialization: Getting the Rigidbody component and configuring max angular velocity.
+    void Start()
     {
-        // Initialize Rigidbody and camera
-        rb = GetComponent<Rigidbody>();
-        mainCamera = Camera.main;
-
-        // Set the maximum angular velocity for the sphere's rotation
-        rb.maxAngularVelocity = maxAngularVelocity;
-
-        // Check if camera is assigned, otherwise throw an error
-        if (mainCamera == null)
-            Debug.LogError("No main camera found. Please tag your camera as 'MainCamera'");
+        rb = GetComponent<Rigidbody>(); // Reference to Rigidbody for physics-based movement
+        rb.mass = 10; // Set the mass of the sphere to 10
+        rb.maxAngularVelocity = maxAngularVelocity; // Prevent unrealistic spinning by limiting angular velocity
     }
 
-    private void Update()
+    // Update: Handles input for jumping and checking grounded status.
+    void Update()
     {
-        // Handle jump input — jump only occurs when the player is grounded
+        // Check if the player pressed the Jump button and is grounded (no double jumps)
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            // Check if the player is sprinting (holding LeftShift) and apply respective jump force
+            // Determine the appropriate jump force (based on sprinting)
             float force = Input.GetKey(KeyCode.LeftShift) ? sprintJumpForce : jumpForce;
 
-            // Apply upward force for the jump with Impulse mode (instant application)
+            // Apply an upward force to the Rigidbody to simulate the jump
             rb.AddForce(Vector3.up * force, ForceMode.Impulse);
 
-            // Once the player jumps, they are no longer grounded until they hit the ground again
+            // Mark the sphere as not grounded until it lands
             isGrounded = false;
         }
     }
 
-    private void FixedUpdate()
+    // FixedUpdate: Handles physics-based movement.
+    void FixedUpdate()
     {
-        // Handle player movement in FixedUpdate to sync with physics engine
-        ApplyMovementTorque();
+        ApplyMovementTorque(); // Apply movement torque based on player input
     }
 
+    // ApplyMovementTorque: Applies torque for rolling movement based on player input.
     void ApplyMovementTorque()
     {
-        // Get horizontal (A/D, Left/Right) and vertical (W/S, Up/Down) axis input from keyboard
+        // Get input values for horizontal and vertical movement (WASD or Arrow keys)
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        // If there is no movement input, we skip applying torque
+        // If no input is received, don't apply torque (prevents unwanted movement)
         if (horizontal == 0 && vertical == 0) return;
 
-        // Normalize the input to ensure consistent movement speed regardless of direction
+        // Calculate direction vector based on user input (normalized to avoid diagonal speed boost)
         Vector3 inputDir = new Vector3(horizontal, 0, vertical).normalized;
 
-        // Calculate the camera's forward and right direction (ignoring vertical axis)
-        Vector3 camForward = mainCamera.transform.forward;
-        Vector3 camRight = mainCamera.transform.right;
+        // Calculate the axis of torque (we swap X and Z axes to make it roll correctly)
+        Vector3 torqueAxis = new Vector3(inputDir.z, 0, -inputDir.x);
 
-        camForward.y = 0; // Remove Y component to prevent vertical movement
-        camRight.y = 0; // Remove Y component to prevent vertical movement
-
-        // Normalize the vectors so that movement is consistent regardless of camera rotation
-        camForward.Normalize();
-        camRight.Normalize();
-
-        // Calculate the final movement direction based on camera orientation and player input
-        Vector3 moveDir = (camForward * vertical + camRight * horizontal).normalized;
-
-        // Convert movement direction into torque axis (we swap X and Z axes for proper rolling effect)
-        Vector3 torqueAxis = new Vector3(moveDir.z, 0, -moveDir.x);
-
-        // Use walking speed or sprinting speed based on whether the Left Shift key is held
+        // Choose the movement speed (normal or sprinting based on LeftShift key)
         float speed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
 
-        // Apply torque to the Rigidbody based on movement direction and speed
+        // Apply torque to the Rigidbody to simulate rolling movement
         rb.AddTorque(torqueAxis * speed);
     }
 
-    // Called when the sphere stays in contact with any colliders
+    // OnCollisionStay: Detects if the sphere is grounded by checking for contact with the ground layer.
     private void OnCollisionStay(Collision collision)
     {
-        // Check if the sphere is touching a ground object (based on the LayerMask)
+        // Check if the collided object is on the ground layer (specified by groundMask)
         if (((1 << collision.gameObject.layer) & groundMask) != 0)
         {
-            // For valid ground collisions, check if the normal of the collision point is facing upwards
+            // Iterate through collision contacts to find any upward-facing normals (indicating the ground)
             foreach (ContactPoint contact in collision.contacts)
             {
-                // If the contact's normal is mostly upward (indicating ground), mark the sphere as grounded
-                if (contact.normal.y > 0.5f)
+                if (contact.normal.y > 0.5f) // If the collision normal points mostly upwards, consider the sphere grounded
                 {
                     isGrounded = true;
-                    break; // Exit the loop after confirming grounded
+                    break; // Exit the loop once we confirm grounding
                 }
             }
         }
     }
 
-    // Called when the sphere exits contact with a collider (typically when it leaves the ground)
+    // OnCollisionExit: Sets isGrounded to false when the sphere leaves the ground.
     private void OnCollisionExit(Collision collision)
     {
-        // If the sphere is no longer touching the ground layer, set isGrounded to false
+        // If the sphere stops touching the ground layer, mark it as not grounded
         if (((1 << collision.gameObject.layer) & groundMask) != 0)
         {
             isGrounded = false;
-        }
-    }
+        }
+    }
 }

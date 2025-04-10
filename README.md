@@ -265,14 +265,22 @@ Component	Description
 🛠️ Script Summary & Behavior
 Script	Purpose	Key Functions
 MagicSphereMovement.cs	Manages movement, collisions, and jumping	AddTorque(), OnCollisionEnter, AddForce()
+
 //CameraFollow.cs	Smooth camera follow with slight lag	LateUpdate(), offset logic// CENIMA MACHINE 
+
 RockSpawner.cs	Spawns rocks at intervals	InvokeRepeating(), destroy rocks when velocity is low
+
 Rock.cs	Handles rock behavior on collision and self-cleanup	OnCollisionEnter(), IsSleeping()
 ShardSpawner.cs	Spawns shards with 25% probability	Random.value, Instantiate()
+
 Shard.cs	Detects collision with player, heals shield	OnTriggerEnter(), UI update
+
 Portal.cs	Ends game upon contact	OnTriggerEnter()
-A magical sphere must climb a dangerous mountain to reach the Summit Portal, a mysterious 
-gateway at the peak. But the journey is not easy, as huge rocks fall from above, threatening to break its 
+
+A magical sphere must climb a dangerous mountain to reach the Summit Portal, a mysterious
+
+gateway at the peak. But the journey is not easy, as huge rocks fall from above, threatening to break its
+
 protective blue shield. 
 
 To survive, the sphere must dodge falling rocks while collecting blue shards, which restore lost parts 
@@ -284,7 +292,9 @@ Can the sphere overcome the mountain’s challenges and complete its journey ?
 💡 Beyond the Basics – Where I pushed boundaries and added extra flair.
 
 ✅ Sound effects for rain falling 
+
 ✅ Sound effects for rock impact and shard pickup
+
 ✅ Simple UI with health/shield bar and shard count
 
 
@@ -374,8 +384,14 @@ not the best changes yet
 8. Game Dynamics & Logic
    
 Falling objects and collsion
+A ROCK
 ![image](https://github.com/user-attachments/assets/12c3c43d-6dae-4347-ab23-7088c10ce2d3)
 ![image](https://github.com/user-attachments/assets/87565f5e-b486-4af9-b498-fe004e38cff7)
+
+B SHARD
+![image](https://github.com/user-attachments/assets/ca3420f3-1d66-46ad-8ba1-d55b5809120a)
+
+![image](https://github.com/user-attachments/assets/509e6bec-706f-4393-a4aa-cc40a8ab823d)
 
 💡 Beyond the Basics: I applied Torque to induce natural rotation by applying a rotational force
 while direct rotation sets the object's orientation immediately without the need for forces

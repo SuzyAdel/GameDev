@@ -370,10 +370,15 @@ MOVEMENT -
 ![image](https://github.com/user-attachments/assets/398078f6-ffb8-4d16-b950-749e9beb1b6e)
 not the best changes yet 
 
-8. Game Dynamics & Logic 
+
+8. Game Dynamics & Logic
+   
 Falling objects and collsion
 ![image](https://github.com/user-attachments/assets/12c3c43d-6dae-4347-ab23-7088c10ce2d3)
+![Uploading image.png…]()
 
+💡 Beyond the Basics: I applied Torque to induce natural rotation by applying a rotational force
+while direct rotation sets the object's orientation immediately without the need for forces
 
 
 9. Rain
@@ -423,3 +428,20 @@ I didn’t just make particles— I engineered weather 🌧️🛠️
 
 💡 Beyond the Basics : added rain sound to complement the rainfall 
 
+
+
+
+
+
+
+SCRIPTS 
+
+
+-  The RockSpawner script is responsible for spawning falling rocks at random intervals after 5 seconds. 
+ Rocks are selected randomly from the provided prefabs and spawn in front of the player, with random offsets in both the X and Z axes relative to the player's forward direction. 
+ Rocks fall from a fixed height (Y=40) and are given random torque to simulate natural falling and spinning behavior using the Rigidbody component.
+ Spawned rocks will fall at varying speeds, with intervals ranging from 100ms to 500ms, controlled by the InvokeRepeating method.
+The rocks are instantiated with no initial rotation to maintain randomness in their falling behavior. 
+ The logic allows for continuous spawning of rocks until the game ends or the spawning is stopped.
+
+-

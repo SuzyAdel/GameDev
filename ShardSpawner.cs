@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShardSpawner : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class ShardSpawner : MonoBehaviour
 
     // Probability for shard spawning (25%)
     private float spawnProbability = 0.25f;
-    private bool isSpawning = false;
+    public bool isSpawning = false;
 
     void Start()
     {
@@ -22,8 +22,8 @@ public class ShardSpawner : MonoBehaviour
     void StartSpawning()
     {
         isSpawning = true;
-        // Repeatedly attempt to spawn a shard at random intervals
-        InvokeRepeating(nameof(AttemptSpawnShard), 0f, Random.Range(spawnRateMin, spawnRateMax));
+        // Repeatedly attempt to put shards in the world every 5 seconds
+        InvokeRepeating(nameof(AttemptSpawnShard), 0f,5f);
     }
 
     // Attempt to spawn a shard based on a random 25% chance

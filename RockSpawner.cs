@@ -6,8 +6,8 @@ public class RockSpawner : MonoBehaviour
     public GameObject[] rockPrefabs; // 3 rock prefabs assigned in Inspector
     public Transform player;         // Reference to the player object
     public float spawnHeight = 40f;  // Fixed Y spawn height
-    private bool isSpawning = false;
-
+    public bool isSpawning = false;
+    public Transform cam;
     void Start()
     {
         Invoke(nameof(StartSpawning), 5f); // Start spawning after 5 seconds
@@ -28,14 +28,14 @@ public class RockSpawner : MonoBehaviour
         GameObject rockPrefab = rockPrefabs[Random.Range(0, rockPrefabs.Length)];
 
         // Calculate spawn position relative to player
-        Vector3 forward = player.forward.normalized;
-        Vector3 spawnOffset = forward * Random.Range(30f, 40f); // Random Z
-        spawnOffset += player.right * Random.Range(-10f, 10f); // Random X
+        //Vector3 forward = player.forward.normalized;
+        Vector3 spawnOffset = new Vector3(0,0,Random.Range(30f, 40f)); // Random Z
+        spawnOffset += Vector3.right * Random.Range(-10f, 10f); // Random X
+        spawnOffset = Quaternion.AngleAxis(cam.eulerAngles.y, Vector3.up) * spawnOffset; // Rotate spawn position based on camera angle
         Vector3 spawnPosition = player.position + spawnOffset; 
         spawnPosition.y = spawnHeight; // Fixed Y 40 or can be changed from the inspector
 
         // Instantiate rock with no rotation but with random torque 
-      
         GameObject rock = Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
 
         // Add random torque for natural falling behavior

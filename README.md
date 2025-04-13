@@ -1,6 +1,7 @@
 # Unity Game Development Learning Journey 🚀
 Learning Unity physics, scripting, and game dev one bug at a time — with memes, color, and questionable experiments.
 
+
 ## 🗂️ Master Table of Contents
 | Week | Topics Covered |
 |------|---------------|
@@ -8,6 +9,8 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | **Week 2** | Mesh vs. Mesh Renderer, Colliders & Triggers, Prefab vs. Asset, Light Baking |
 | **Week 3** | Maps (Base, Normal, Height), Light Types, Rigidbody Damping, Collision Detection, Friction |
 | **Week 4** | Character Controller, Player Movement, Jump Physics, Gravity, FixedUpdate vs. Update, Terrain Heightmaps |
+| **Week 5** |URP vs Built-in, Manual Terrain Sculpting, Layers, Heightmaps, Wind Zones, Raycasting, Trees & Grass |
+
 ---
 
 ## Last Glass Catastrophe🔥💔
@@ -27,48 +30,58 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 ![image](https://github.com/user-attachments/assets/ca464010-fd14-4fa8-aec0-f2f975d83a36)
 
 
-## 📚 Technical Concepts & Fun Tips
+## 📚 Technical Concepts & Fun Tips 🛠️✨
 
-## Technical Concepts & Fun Tips 🛠️✨
 | Week | Concept | Explanation | Fun Tip |
 |------|---------|-------------|---------|
-| **Week 1** | OpenGL vs. DirectX | Graphics APIs; OpenGL is cross-platform, DirectX is Windows-focused. | Choose wisely, like picking your Pokémon starter! |
-| | CPU vs. GPU | CPU handles logic, GPU handles rendering. | GPUs = artists, CPUs = managers. |
-| | 2D vs. 3D | 2D = points on a plane, 3D = axes and depth. | 2D: Simpler but less immersive; 3D: Welcome to the Matrix. |
-| **Week 2** | Material Application | Drag & drop textures onto objects or assign via Mesh Renderer. | Lazy devs love drag-and-drop! |
-| | Light Pollution Control | Avoid over-lighting; use intensity & range wisely. | If you feel blinded, so will your players. |
-| **Week 3** | Rigidbody | Enables Unity physics; responds to gravity, forces, collisions. | Feels like bringing a rock to life. |
-| | Gravity Control | Customizable in Rigidbody settings. | Zero gravity? Floating chaos unlocked! |
-| | OnCollision vs. OnTrigger | OnCollision includes physics response; OnTrigger is for logic. | Triggers = invisible switches! |
-| **Week 4** | Character Controller | A specialized component for player movement. | Avoids reinventing the wheel for movement. |
-| | SimpleMove vs. Move | SimpleMove includes time factor; Move doesn’t. | One does the math for you, one lets you suffer. |
-| | Jumping Physics | Uses velocity + gravity for realistic movement. | Apply force upwards, let gravity do the rest. |
-| | Heightmaps | Convert real-world elevation into Unity terrains. | Want to game in your backyard? Import its heightmap! |
+| **Week 1** | OpenGL vs. DirectX | Graphics APIs; OpenGL is cross-platform, DirectX is Windows-focused. | Choose wisely, like picking your Pokémon starter! 🔥🌱💧 |
+|  | CPU vs. GPU | CPU handles logic, GPU handles rendering. | GPUs = artists, CPUs = managers. 🎨🧠 |
+|  | 2D vs. 3D | 2D = points on a plane, 3D = axes and depth. | 2D: Simpler but less immersive; 3D: Welcome to the Matrix. 🕶️ |
+| **Week 2** | Material Application | Drag & drop textures onto objects or assign via Mesh Renderer. | Lazy devs love drag-and-drop! 🐌🖱️ |
+|  | Light Pollution Control | Avoid over-lighting; use intensity & range wisely. | If you feel blinded, so will your players. 😎💡 |
+| **Week 3** | Rigidbody | Enables Unity physics; responds to gravity, forces, collisions. | Feels like bringing a rock to life. 🪨✨ |
+|  | Gravity Control | Customizable in Rigidbody settings. | Zero gravity? Floating chaos unlocked! 🛸 |
+|  | OnCollision vs. OnTrigger | OnCollision includes physics response; OnTrigger is for logic. | Triggers = invisible switches! 🚪✨ |
+| **Week 4** | Character Controller | A specialized component for player movement. | Avoids reinventing the wheel for movement. 🛞🕹️ |
+|  | SimpleMove vs. Move | SimpleMove includes time factor; Move doesn’t. | One does the math for you, one lets you suffer. 🧮😩 |
+|  | Jumping Physics | Uses velocity + gravity for realistic movement. | Apply force upwards, let gravity do the rest. 🪂 |
+|  | Heightmaps | Convert real-world elevation into Unity terrains. | Want to game in your backyard? Import its heightmap! 🏡🗺️ |
+| **Week 5** | URP vs. Built-in Rendering | Learned to compare URP (Universal Rendering Pipeline) and Built-in rendering systems, and when to use each in a project. | Choose URP for high-quality visuals on newer hardware! 📸 |
+|  | Terrain Sculpting & Layers | We manually sculpted the terrain and learned how to assemble layers through both code and mouse interaction. | Sculpt like a pro! Click Ctrl to reverse your terrain sculpting action. 🪄 |
+|  | Wind Effects on Terrain & Trees | Learned to link wind with terrain details such as grass, leaves, and trees, and apply wind settings to these elements. | Make your trees sway! Add randomness to your wind to create more natural movement. 🌬️🌳 |
+|  | Heightmaps | Explored creating terrains from heightmaps, adjusting resolution, and understanding scaling and elevation. | Heightmaps are like topographic art! Make sure your map’s dimensions are 2ⁿ+1. 📏🖼️ |
+|  | Tree Placement | Worked on adding trees, applying colliders, and randomizing tree size for a more realistic look. | Don’t mess with tree scale in the transform settings! Adjust it in the import settings for best results. 🌲📐 |
+|  | Raycasting | Explored Raycasting to view exact hit points in terrain, helpful for precise placement or collision detection. | Raycast to perfection! It’s like having X-ray vision for your game world. 🔦🎯 |
+
+
 ---
 
+## 🐞 Debug Table 🔍
 
-## Debug Table 🐞🔍
 | Bug | Observation | Solution | Funny Comment |
 |------|------------|----------|---------------|
-| Local vs Global confusion in rotations | Switch between modes with toolbar; always check if rotation happens relative to parent or world. | Always verify rotation frame of reference. | Unity gaslighting me into thinking I rotated wrong. |
-| Overwhelmed by Unity panels | Too many buttons, too many views. | Took deep breaths and focused on one panel at a time. | "Where am I? What year is it?" |
-| Static spheres not rolling | Two spheres sitting awkwardly on each other — zero rolling, 100% awkwardness. | Added colliders, adjusted rigid body parameters. | They're just shy. Let them roll into friendship! |
-| Creepy character snapping | Character face suddenly flips toward camera — terrifying horror movie moment. | Used LookAt with normalized vector and world rotation settings. | Instant Exorcist mode: activated. |
-| Sudden object tunneling | Falling spheres going through the plane, physics ignored. | Switched collision detection to Continuous, added interpolation. | When gravity says "goodbye" mid-fall. |
-| Diagonal speed boost | Moving diagonally made the object run faster than Sonic. | Normalized input vector magnitude. | Mario Kart drift unlocked by accident. |
-| Trigger confusion | Didn’t know which object the other was referring to in OnTriggerEnter(). | Clarified reference: slime = trigger holder; "other" = object entering zone. | "Other" was the friend we made along the way. |
-| Infinite Jumping | Player could jump infinitely like Flappy Bird. | Added grounded check before allowing jumps. | Accidental infinite jetpack mode unlocked! |
-| Ramp Gravity Snapping | Falling from a ramp caused unnatural snapping effect. | Adjusted gravity calculations and ensured smooth velocity transition. | When Unity physics takes "teleportation" a bit too seriously. |
-| Rigidbody not falling | Object ignored gravity and stayed in place. | Added a Rigidbody component and Collider. Character Controller replaces both. | Gravity who? |
-| Object stuck, not moving | Repetitive movement logic caused conflicts. | Removed redundant commands and used only SimpleMove(). | "Pick one movement method, Unity said." |
-| Game froze | Used `Time.deltaTime` instead of `Time.fixedDeltaTime`. | Fixed by replacing with `Time.deltaTime`. | Physics engine: "PAUSE!" |
+| Local vs Global confusion in rotations | Switch between modes with toolbar; always check if rotation happens relative to parent or world. | Always verify rotation frame of reference. | Unity gaslighting me into thinking I rotated wrong. 🔁 |
+| Overwhelmed by Unity panels | Too many buttons, too many views. | Took deep breaths and focused on one panel at a time. | "Where am I? What year is it?" 🌀 |
+| Static spheres not rolling | Two spheres sitting awkwardly on each other — zero rolling, 100% awkwardness. | Added colliders, adjusted rigid body parameters. | They're just shy. Let them roll into friendship! ⚽💞 |
+| Creepy character snapping | Character face suddenly flips toward camera — terrifying horror movie moment. | Used LookAt with normalized vector and world rotation settings. | Instant Exorcist mode: activated. 😱 |
+| Sudden object tunneling | Falling spheres going through the plane, physics ignored. | Switched collision detection to Continuous, added interpolation. | When gravity says "goodbye" mid-fall. 🌌 |
+| Diagonal speed boost | Moving diagonally made the object run faster than Sonic. | Normalized input vector magnitude. | Mario Kart drift unlocked by accident. 🏎️💨 |
+| Trigger confusion | Didn’t know which object the other was referring to in OnTriggerEnter(). | Clarified reference: slime = trigger holder; "other" = object entering zone. | "Other" was the friend we made along the way. 🧼👾 |
+| Infinite Jumping | Player could jump infinitely like Flappy Bird. | Added grounded check before allowing jumps. | Accidental infinite jetpack mode unlocked! 🚀 |
+| Ramp Gravity Snapping | Falling from a ramp caused unnatural snapping effect. | Adjusted gravity calculations and ensured smooth velocity transition. | When Unity physics takes "teleportation" a bit too seriously. 🛸 |
+| Rigidbody not falling | Object ignored gravity and stayed in place. | Added a Rigidbody component and Collider. Character Controller replaces both. | Gravity who? 🎈 |
+| Object stuck, not moving | Repetitive movement logic caused conflicts. | Removed redundant commands and used only SimpleMove(). | "Pick one movement method," Unity said. 🧍‍♂️💥 |
+| Game froze | Used `Time.deltaTime` instead of `Time.fixedDeltaTime`. | Fixed by replacing with `Time.fixedDeltaTime`. | Physics engine: "PAUSE!" 🛑⏳ |
+| Tree Collision Issue | Trees didn’t have colliders in the right places, causing issues with movement. | Fixed by ensuring colliders were placed at the base of the trees. | Trees don’t like being touched! They’ll stay put now. 🌳🙅 |
+| Wind Zone Displacement | Wind zone direction wasn't affecting terrain objects properly. | Corrected by adjusting wind zone settings (spherical vs directional). | When wind gets stubborn, just change its direction! 💨🧭 |
+| Height Map Scaling | Changing height map resolution caused loss of detail or stretched elevation. | Fixed by adjusting the scaling method and ensuring max height calculation. | Scaling up the terrain is a real “elevation” challenge! 🗻📐 |
 
 ---
 
 
 ## ⚖️ Comparisons (Each With Their Own Charm!)
 
-### Week 1
+## Week 1
 
 #### 🎮 OpenGL vs DirectX
 | Feature      | OpenGL 🌍                         | DirectX 🎯                     |
@@ -103,7 +116,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Global   | Movement/rotation relative to world axes 🌎  |
 | Local    | Movement/rotation relative to object axes 🔗|
 
-### Week 2
+## Week 2
 
 #### 🧩 Mesh vs Mesh Renderer
 | Feature         | Mesh 🔶                            | Mesh Renderer 🎥                          |
@@ -129,7 +142,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Mixed    | Combination of baked and realtime effects 🍰         |
 | Baked    | Pre-calculated lighting for performance boost 🍞    |
 
-### Week 3
+## Week 3
 
 #### 🎨 Base Map vs Normal Map vs Height Map
 | Map Type    | Description                                       |
@@ -177,7 +190,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Dynamic       | Resistance when object is moving 🛷          |
 | Static        | Resistance before object starts moving 🏋️    |
 
-### Week 4
+## Week 4
 #### Character Controller vs. Capsule Collider 🏗️
 | Feature | Explanation |
 |---------|------------|
@@ -221,19 +234,41 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Application | Imported into Unity to create realistic landscape elevation. |
 
 ---
+## Week 5
+
+### URP vs. Built-in Rendering 🛠️
+
+| Feature         | URP 🚀                        | Built-in 🧱                     |
+|-----------------|------------------------------|--------------------------------|
+| Performance     | Optimized for mobile/VR      | Better on older hardware       |
+| Shader Support  | Requires conversion           | Works with Standard Shader     |
+| Use Case        | Ideal for high-end visuals    | Great for legacy projects      |
+
+---
+
+### Tree Placement: Standalone vs. Terrain 🌳
+
+| Feature     | Standalone 🌲               | Terrain 🌍                     |
+|------------|-----------------------------|-------------------------------|
+| Flexibility | Move freely                 | Locked to terrain             |
+| Collision   | Manual setup required       | Auto-generated on placement   |
 
 
 ## 💡 Future Ideas & Experiments
+
 | Week | Idea/Experiment | Why It’s Cool |
-|------|---------------|--------------|
+|------|------------------|----------------|
 | **Week 2** | Light scenes for one player using layers | Mystery game where Player 1 sees hidden clues! 🔦 |
-| | Torch reveals hidden objects | Perfect for puzzle or horror games 👀 |
+|  | Torch reveals hidden objects | Perfect for puzzle or horror games 👀 |
 | **Week 3** | Test colored cookies with alpha | Adds rainbow effects and dynamic shadows 🌈 |
-| | Dual-layer lighting for hidden/exposed objects | Example: torch reveals "secret" walls! 🔦 |
-| | Camera output on UI devices | Display camera feed on in-game tablets 📱 |
+|  | Dual-layer lighting for hidden/exposed objects | Example: torch reveals "secret" walls! 🔦 |
+|  | Camera output on UI devices | Display camera feed on in-game tablets 📱 |
 | **Week 4** | Implement Shock Physics | Sudden force application for instant motion 💥 |
-| | Create "Flappy Bird Mode" | Switch between flying & normal jump modes 🕊️ |
-| | Use real-world extreme terrain heightmap | See how Unity handles huge elevation differences 🏔️ |
+|  | Create "Flappy Bird Mode" | Switch between flying & normal jump modes 🕊️ |
+|  | Use real-world extreme terrain heightmap | See how Unity handles huge elevation differences 🏔️ |
+| **Week 5** | Add dynamic fog zones based on player height | Makes the environment feel more mysterious and immersive 🌫️ |
+|  | Blend terrain textures based on slope | Could auto-make steep areas rocky and flat areas grassy 🧗🌾 |
+|  | Animate wind intensity to match in-game weather | Adds realism, connects weather systems with environmental effects 🌪️ |
 
 ## The Previous Spirals 🌀⏳
 

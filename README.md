@@ -22,13 +22,12 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 -When the walls exist but the logic took a day off
 ![image](https://github.com/user-attachments/assets/aa90d413-59a6-4a26-aafe-37db3671c028)
 
-![image](https://github.com/user-attachments/assets/4328bbf6-d460-4c93-b990-ad1a90598aba)
 
 ## Antarctica: Slippery Code Edition
 –A winter wonderland of bugs, where even my logic froze. ❄️
 
-![WhatsApp Image 2025-03-30 at 16 33 26_4df472d4](https://github.com/user-attachments/assets/ab6af4eb-9918-4289-ab24-bf4bcce2d11d)
-![image](https://github.com/user-attachments/assets/ca464010-fd14-4fa8-aec0-f2f975d83a36)
+![image](https://github.com/user-attachments/assets/9d8ab224-d23a-4ecd-a54b-e86bc931a175)
+
 
 
 ## 📚 Technical Concepts & Fun Tips 🛠️✨
@@ -305,6 +304,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 
 Here’s a screenshot to immortalize the absolute chaos—proof that my first attempt didn’t just fail, it spectacularly failed. Exposing my own mess so future me has no choice but to fix it. 😂
 ## Antarctica: Slippery Code Edition
+![image](https://github.com/user-attachments/assets/4328bbf6-d460-4c93-b990-ad1a90598aba)
 ![image](https://github.com/user-attachments/assets/9e1a39a9-0285-4bb8-b39a-934b008b44ed)
 
 ![image](https://github.com/user-attachments/assets/16768694-4a3f-4a71-8c59-20badeb44445)
@@ -467,4 +467,4 @@ Created blinking effect instead of static appearance
 | 🐛 Debug Shaman | Fixed bizarre bugs with creative solutions |
 | 🖌️ Lazy Artist | Made simple assets look polished through lighting |
 
-material.color = Color.Lerp(originalColor, blinkColor, Mathf.PingPong(Time.time, 1));
+

@@ -3,13 +3,14 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 
 
 ## 🗂️ Master Table of Contents
-| Week | Topics Covered |
-|------|---------------|
-| **Week 1** | OpenGL vs. DirectX, Unity Setup, CPU vs. GPU, 2D vs. 3D, Global vs. Local Transforms |
-| **Week 2** | Mesh vs. Mesh Renderer, Colliders & Triggers, Prefab vs. Asset, Light Baking |
-| **Week 3** | Maps (Base, Normal, Height), Light Types, Rigidbody Damping, Collision Detection, Friction |
-| **Week 4** | Character Controller, Player Movement, Jump Physics, Gravity, FixedUpdate vs. Update, Terrain Heightmaps |
-| **Week 5** |URP vs Built-in, Manual Terrain Sculpting, Layers, Heightmaps, Wind Zones, Raycasting, Trees & Grass |
+| Week | Topics Covered | Core Themes |
+|------|----------------|-------------|
+| **Week 1** | Unity Basics, Rigidbody, Collisions, Physics Setup | *"Getting Things Moving, Bumping Into Walls, and Learning to Fall Gracefully"* |
+| **Week 2** | Forces, Torque, Materials, Bounciness, and Jump Physics | *"Torque the Talk: Jumping, Sliding, and Rolling with Style"* |
+| **Week 3** | Physics Materials, Camera Logic, Importing Assets, Debugging | *"Camera Shyness, Physics Madness, and Where's That Texture?"* |
+| **Week 4** | UI Canvas, Health Bars, Shader Graph, Material Experiments | *"Healthbars, Glows, and the Shader Graph Show"* |
+| **Week 5** | URP vs Built-in, Tree Placement, Environment Setup | *"Rendering Wars & Tree-hugging Techniques"* |
+| **Week 6** | Cinemachine, Particle Systems, Sub-Emitters, 8-Bit Art | *"Cinemachine Brains, Rain Explosions, and Retro Dreams"* |ilt-in, Manual Terrain Sculpting, Layers, Heightmaps, Wind Zones, Raycasting, Trees & Grass |
 
 ---
 
@@ -29,6 +30,8 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 ![WhatsApp Image 2025-03-30 at 16 33 26_4df472d4](https://github.com/user-attachments/assets/ab6af4eb-9918-4289-ab24-bf4bcce2d11d)
 ![image](https://github.com/user-attachments/assets/ca464010-fd14-4fa8-aec0-f2f975d83a36)
 
+
+## 📚 Technical Concepts & Fun Tips 🛠️✨
 
 ## 📚 Technical Concepts & Fun Tips 🛠️✨
 
@@ -52,29 +55,33 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 |  | Heightmaps | Explored creating terrains from heightmaps, adjusting resolution, and understanding scaling and elevation. | Heightmaps are like topographic art! Make sure your map’s dimensions are 2ⁿ+1. 📏🖼️ |
 |  | Tree Placement | Worked on adding trees, applying colliders, and randomizing tree size for a more realistic look. | Don’t mess with tree scale in the transform settings! Adjust it in the import settings for best results. 🌲📐 |
 |  | Raycasting | Explored Raycasting to view exact hit points in terrain, helpful for precise placement or collision detection. | Raycast to perfection! It’s like having X-ray vision for your game world. 🔦🎯 |
-
+| **Week 6** | Torque vs. Force | Torque causes rotation, force causes translation. Used torque for spherical movement. | Torque = spin to win! Great for rolling characters. 🔄⚙️ |
+|  | Shield Restoration | Shard collection triggers shield restoration using UI fill bars and timers. | Shields up! Gamify it with visuals for dramatic effect. 🛡️✨ |
+|  | Tag vs. Layer | Tags help identify objects; layers are for grouping in rendering and physics. | Tags = name badges; Layers = VIP access groups. 🎟️📚 |
+|  | LayerMask Filtering | Used in raycasting to detect only specific object types. | Raycast smarter, not harder. LayerMask your way to clarity. 🧠🔍 |
+|  | Coroutine Timing | Used coroutine to spawn shards every 5 seconds with delay logic. | Time-based spawning? Coroutine is your bestie! ⏲️💙 |
+|  | Event Triggers | Triggered audio, particles, and animations on shard collection. | Make interactions magical with sparkles and sounds! ✨🔊💫 |
 
 ---
 
-## 🐞 Debug Table 🔍
+## 🐞 Debug Table
 
-| Bug | Observation | Solution | Funny Comment |
-|------|------------|----------|---------------|
-| Local vs Global confusion in rotations | Switch between modes with toolbar; always check if rotation happens relative to parent or world. | Always verify rotation frame of reference. | Unity gaslighting me into thinking I rotated wrong. 🔁 |
-| Overwhelmed by Unity panels | Too many buttons, too many views. | Took deep breaths and focused on one panel at a time. | "Where am I? What year is it?" 🌀 |
-| Static spheres not rolling | Two spheres sitting awkwardly on each other — zero rolling, 100% awkwardness. | Added colliders, adjusted rigid body parameters. | They're just shy. Let them roll into friendship! ⚽💞 |
-| Creepy character snapping | Character face suddenly flips toward camera — terrifying horror movie moment. | Used LookAt with normalized vector and world rotation settings. | Instant Exorcist mode: activated. 😱 |
-| Sudden object tunneling | Falling spheres going through the plane, physics ignored. | Switched collision detection to Continuous, added interpolation. | When gravity says "goodbye" mid-fall. 🌌 |
-| Diagonal speed boost | Moving diagonally made the object run faster than Sonic. | Normalized input vector magnitude. | Mario Kart drift unlocked by accident. 🏎️💨 |
-| Trigger confusion | Didn’t know which object the other was referring to in OnTriggerEnter(). | Clarified reference: slime = trigger holder; "other" = object entering zone. | "Other" was the friend we made along the way. 🧼👾 |
-| Infinite Jumping | Player could jump infinitely like Flappy Bird. | Added grounded check before allowing jumps. | Accidental infinite jetpack mode unlocked! 🚀 |
-| Ramp Gravity Snapping | Falling from a ramp caused unnatural snapping effect. | Adjusted gravity calculations and ensured smooth velocity transition. | When Unity physics takes "teleportation" a bit too seriously. 🛸 |
-| Rigidbody not falling | Object ignored gravity and stayed in place. | Added a Rigidbody component and Collider. Character Controller replaces both. | Gravity who? 🎈 |
-| Object stuck, not moving | Repetitive movement logic caused conflicts. | Removed redundant commands and used only SimpleMove(). | "Pick one movement method," Unity said. 🧍‍♂️💥 |
-| Game froze | Used `Time.deltaTime` instead of `Time.fixedDeltaTime`. | Fixed by replacing with `Time.fixedDeltaTime`. | Physics engine: "PAUSE!" 🛑⏳ |
-| Tree Collision Issue | Trees didn’t have colliders in the right places, causing issues with movement. | Fixed by ensuring colliders were placed at the base of the trees. | Trees don’t like being touched! They’ll stay put now. 🌳🙅 |
-| Wind Zone Displacement | Wind zone direction wasn't affecting terrain objects properly. | Corrected by adjusting wind zone settings (spherical vs directional). | When wind gets stubborn, just change its direction! 💨🧭 |
-| Height Map Scaling | Changing height map resolution caused loss of detail or stretched elevation. | Fixed by adjusting the scaling method and ensuring max height calculation. | Scaling up the terrain is a real “elevation” challenge! 🗻📐 |
+| Week | Bug / Issue Encountered | Observations | Solution | 🧠 Comment / Funny Note |
+|------|--------------------------|--------------|----------|--------------------------|
+| **Week 1** | Scene too dark | Couldn’t see terrain details or player | Added directional light + adjusted intensity | It’s not a horror game yet, chill with the darkness. 🕯️ |
+| **Week 2** | Materials not applying correctly | Materials looked flat and weird | Checked shader settings, reapplied correct material type | It wasn’t a bug. I just had commitment issues. 🎨💔 |
+| **Week 3** | Rigidbody character wouldn’t jump | Used wrong force mode and forgot to check "isGrounded" | Switched to `ForceMode.Impulse`, added ground check logic | The floor is... not lava. It’s just unregistered. 🧱🤦‍♀️ |
+| **Week 4** | Character floats or doesn’t land properly | Gravity didn’t feel real, bouncy effects | Added downward force manually and tweaked drag | Basically gave my character an existential crisis. 😵‍💫 |
+|  | OnTrigger not detected | Forgot to check “Is Trigger” on collider | Enabled trigger on the collider | Checked everything except the checkbox. Classic. ✅🤡 |
+| **Week 5** | Trees missing colliders | Player walks through trees | Realized Unity terrain trees don’t have mesh colliders by default | Used capsule colliders at tree bases only | Ghost trees are not the vibe. 👻🌲 |
+|  | Terrain too spiky after heightmap import | Scale too large for heightmap depth | Reduced heightmap scale & smoothed terrain | Accidentally summoned Mount Doom. 🏔️🔥 |
+|  | Wind Zone not affecting trees | Trees didn’t sway | Used proper Speed/Size values + enabled wind support in tree shader | Wind was like “Not my job.” Had to convince it. 💨🙅 |
+| **Week 6** | Torque didn’t rotate player properly | Sphere rotated inconsistently; didn’t align with camera | Used `AddTorque` in `FixedUpdate` with normalized direction from input | Spinning out of control… story of my life. 🌀😭 |
+|  | Shards spawned inside terrain | Some collectible shards were unreachable | Adjusted spawn height offset above terrain using `Terrain.SampleHeight` | Shards had tunnel vision. Literally underground. 💎⛏️ |
+|  | Shield UI didn’t update visually | Logic worked but fill bar stayed empty | Forgot to assign `Image.fillAmount` in script | The code worked… but forgot to tell the UI. 😶🖼️ |
+|  | Coroutine spawned shards too fast | Multiple shards appeared before 5s | Didn’t set `spawned` flag or use proper wait timing | Coroutine was a caffeine-fueled mess. ☕⚡ |
+|  | Player triggered shard but no feedback | No sound or particles on collection | Added particle system + audio source + trigger detection | The shard was shy. Gave it a glow-up. ✨🎶 |
+
 
 ---
 
@@ -253,22 +260,46 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Flexibility | Move freely                 | Locked to terrain             |
 | Collision   | Manual setup required       | Auto-generated on placement   |
 
+## Week 6
+
+### 🎥 Cinemachine vs. Traditional Camera
+
+| Feature                       | Traditional Camera        | Cinemachine Virtual Camera        |
+|------------------------------|---------------------------|-----------------------------------|
+| Position/Rotation            | Manual script control     | Auto-follows targets & blends     |
+| Transitions                  | Snap or Lerp              | Smooth blends with timeline/curves |
+| Field of View Adjustments    | Manually coded            | Built-in dynamic options          |
+| Collision Handling           | Needs scripting           | Built-in damping + collision push |
+
+### ☔ Post-Processing with Rain
+
+| Aspect              | No Effects              | With Post-Processing              |
+|---------------------|-------------------------|-----------------------------------|
+| Visual Clarity      | Flat, less atmosphere   | Depth blur, fog, wet screen FX    |
+| Mood                | Neutral or dry          | Dramatic, immersive rainy feel    |
+| Camera Layering     | Static render           | Dynamic overlays based on weather |
+
+
 
 ## 💡 Future Ideas & Experiments
 
-| Week | Idea/Experiment | Why It’s Cool |
-|------|------------------|----------------|
-| **Week 2** | Light scenes for one player using layers | Mystery game where Player 1 sees hidden clues! 🔦 |
-|  | Torch reveals hidden objects | Perfect for puzzle or horror games 👀 |
-| **Week 3** | Test colored cookies with alpha | Adds rainbow effects and dynamic shadows 🌈 |
-|  | Dual-layer lighting for hidden/exposed objects | Example: torch reveals "secret" walls! 🔦 |
-|  | Camera output on UI devices | Display camera feed on in-game tablets 📱 |
-| **Week 4** | Implement Shock Physics | Sudden force application for instant motion 💥 |
-|  | Create "Flappy Bird Mode" | Switch between flying & normal jump modes 🕊️ |
-|  | Use real-world extreme terrain heightmap | See how Unity handles huge elevation differences 🏔️ |
-| **Week 5** | Add dynamic fog zones based on player height | Makes the environment feel more mysterious and immersive 🌫️ |
-|  | Blend terrain textures based on slope | Could auto-make steep areas rocky and flat areas grassy 🧗🌾 |
-|  | Animate wind intensity to match in-game weather | Adds realism, connects weather systems with environmental effects 🌪️ |
+| Week     | Idea/Experiment                                      | Why It’s Cool                                                |
+|----------|------------------------------------------------------|---------------------------------------------------------------|
+| **Week 2** | Light scenes for one player using layers             | Mystery game where Player 1 sees hidden clues! 🔦             |
+|          | Torch reveals hidden objects                         | Perfect for puzzle or horror games 👀                         |
+| **Week 3** | Test colored cookies with alpha                      | Adds rainbow effects and dynamic shadows 🌈                   |
+|          | Dual-layer lighting for hidden/exposed objects       | Example: torch reveals "secret" walls! 🔦                     |
+|          | Camera output on UI devices                          | Display camera feed on in-game tablets 📱                     |
+| **Week 4** | Implement Shock Physics                              | Sudden force application for instant motion 💥                |
+|          | Create "Flappy Bird Mode"                            | Switch between flying & normal jump modes 🕊️                 |
+|          | Use real-world extreme terrain heightmap             | See how Unity handles huge elevation differences 🏔️          |
+| **Week 5** | Add dynamic fog zones based on player height         | Makes the environment feel more mysterious 🌫️               |
+|          | Blend terrain textures based on slope                | Could auto-make steep areas rocky and flat areas grassy 🧗🌾 |
+|          | Animate wind intensity to match in-game weather      | Adds realism with dynamic weather effects 🌪️                |
+| **Week 6** | Add manual camera switch button for gamepad/mouse    | Lets player shift views interactively 🎮                      |
+|          | Rain that affects post-processing (depth blur, fog)  | Boosts immersion with reactive FX based on weather ☔         |
+|          | Customize camera blend curves for events             | Smooth transitions based on story or movement events 🎬       |
+|
 
 ## The Previous Spirals 🌀⏳
 

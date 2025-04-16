@@ -3,14 +3,16 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 
 
 ## 🗂️ Master Table of Contents
-| Week | Topics Covered | Core Themes |
-|------|----------------|-------------|
-| **Week 1** | Unity Basics, Rigidbody, Collisions, Physics Setup | *"Getting Things Moving, Bumping Into Walls, and Learning to Fall Gracefully"* |
-| **Week 2** | Forces, Torque, Materials, Bounciness, and Jump Physics | *"Torque the Talk: Jumping, Sliding, and Rolling with Style"* |
-| **Week 3** | Physics Materials, Camera Logic, Importing Assets, Debugging | *"Camera Shyness, Physics Madness, and Where's That Texture?"* |
-| **Week 4** | UI Canvas, Health Bars, Shader Graph, Material Experiments | *"Healthbars, Glows, and the Shader Graph Show"* |
-| **Week 5** | URP vs Built-in, Tree Placement, Environment Setup | *"Rendering Wars & Tree-hugging Techniques"* |
-| **Week 6** | Cinemachine, Particle Systems, Sub-Emitters, 8-Bit Art | *"Cinemachine Brains, Rain Explosions, and Retro Dreams"* |ilt-in, Manual Terrain Sculpting, Layers, Heightmaps, Wind Zones, Raycasting, Trees & Grass |
+| Week | Key Topics Covered |
+|------|---------------------|
+| 1 | 🎮 Unity Setup, Game Objects, Components, Transforms, Tags, and Layers |
+| 2 | 🧠 Scripting Basics, C# Integration, Input Handling, Movement Scripts |
+| 3 | ⚙️ Rigidbody Physics, Mass, Damping, Collision Detection, Physics Materials |
+| 4 | 🗺️ Terrain Generation from Heightmap, Scripting Terrain Textures & Trees |
+| 5 | 🎥 Camera Systems, Cinemachine, 3rd Person Setup, Triggers & Collisions |
+| 6 | 🧱 Object Pooling, Collectibles System, Coroutines, Health & Shields |
+| 7 | 🔥 Particle Systems: Custom Fire, Snow, Gaussian Blur, Alpha, Billboard Effects |
+| 8 | 🕺 Animation Basics, State Machines, Blend Trees, Root Motion, Attack Effects |
 
 ---
 
@@ -31,7 +33,6 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 ![image](https://github.com/user-attachments/assets/9d8ab224-d23a-4ecd-a54b-e86bc931a175)
 
 
-## 📚 Technical Concepts & Fun Tips 🛠️✨
 
 ## 📚 Technical Concepts & Fun Tips 🛠️✨
 
@@ -61,6 +62,12 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 |  | LayerMask Filtering | Used in raycasting to detect only specific object types. | Raycast smarter, not harder. LayerMask your way to clarity. 🧠🔍 |
 |  | Coroutine Timing | Used coroutine to spawn shards every 5 seconds with delay logic. | Time-based spawning? Coroutine is your bestie! ⏲️💙 |
 |  | Event Triggers | Triggered audio, particles, and animations on shard collection. | Make interactions magical with sparkles and sounds! ✨🔊💫 |
+| **Week 7** | Fire Particle Systems | Fire is created using Unity's Particle System. Parameters like lifetime, speed, emission rate, shape, and color over time simulate realistic fire. | If your fire looks like sad orange dots, tweak the alpha over lifetime curve — trust the process 🔥📈 |
+| | Fire Prefab Setup | Fire effects are usually built as prefabs combining particle systems, lights, sound, and sometimes colliders (for damage or detection). | Bundle that flame! Think of it like a spicy sandwich — particles, glow, sound = 🔥 combo 🌯 |
+| | Optimization Tips | Keep the particle count low, use GPU Instancing, and limit the update rate to save performance. | Fire’s cool until it burns your frame rate. Keep it classy, not laggy. 💻🔥 |
+| **Week 8** | Animator Controller | The Animator controls transitions between animation states using a state machine (Idle → Walk → Jump, etc.). | The Animator is like a DJ: cueing up the next move based on the vibe. 🕺🎧 |
+|  | Parameters & Transitions | Parameters (bool, float, int, trigger) control transitions. You set them in script with `animator.SetTrigger("Jump")`, etc. | Set it, don’t forget it — a missing trigger is how silent movies happen in Unity. 🎬😶 |
+|  | Root Motion vs. Scripted | Root Motion uses animation data to move the character; Scripted uses Rigidbody or Transform. Choose based on control needs. | Root Motion = autopilot ✈️. Scripted = manual drive 🕹️. Know when to chill, and when to steer. |
 
 ---
 
@@ -81,8 +88,10 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 |  | Shield UI didn’t update visually | Logic worked but fill bar stayed empty | Forgot to assign `Image.fillAmount` in script | The code worked… but forgot to tell the UI. 😶🖼️ |
 |  | Coroutine spawned shards too fast | Multiple shards appeared before 5s | Didn’t set `spawned` flag or use proper wait timing | Coroutine was a caffeine-fueled mess. ☕⚡ |
 |  | Player triggered shard but no feedback | No sound or particles on collection | Added particle system + audio source + trigger detection | The shard was shy. Gave it a glow-up. ✨🎶 |
-
-
+| **Week 7**  | | Fire particle flickering too fast | Flames looked like they were panicking 💥 | Adjusted particle lifetime and added slight delay between bursts | The fire had more anxiety than me during finals 🔥😅 |
+|  || Animation snapping between idle/walk | Jerky blend when speed was near zero | Smoothed the parameter threshold + added damping | My character’s dance moves were not it 💃🪩 |
+|  | Character floating during jump animation | Jump clip had root motion enabled | Disabled root motion for vertical transitions | Moonwalking in the air like it’s 2099 🚀🌕 |
+|  |Timeline didn’t trigger animation | Bound objects weren’t set in PlayableDirector | Manually dragged GameObject into track binding | Unity really said “do it yourself” 🧱👷 |
 ---
 
 
@@ -279,6 +288,27 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Mood                | Neutral or dry          | Dramatic, immersive rainy feel    |
 | Camera Layering     | Static render           | Dynamic overlays based on weather |
 
+## Week7 
+| **Feature** | **Unity Particle System** | **Shader-based Fire** | **Real-Time VFX Plugins** |
+|-------------|---------------------------|------------------------|---------------------------|
+| Ease of Use | Beginner-friendly, built into Unity | Requires shader knowledge (HLSL/Shader Graph) | Drag-and-drop ready, minimal setup |
+| Visual Quality | Good with tweaks, supports color/lifetime curves | Highly customizable, can look ultra-realistic | Often cinematic quality, pre-optimized |
+| Performance | Moderate (depends on particle count) | Efficient if written well | Varies (some heavy, some GPU-accelerated) |
+| Customization | Exposed parameters for shape, size, speed | Full control over noise, distortion, emissive glow | Depends on plugin limitations |
+| Integration | Easily used in prefabs, triggerable via script | Needs setup for interaction, harder to reuse | Usually prefab-ready, sometimes overkill |
+| Best Use Case | Simple in-game fire, torches, spells | Stylized or surreal fire, cutscenes | High-end VFX, boss battles, polished games |
+
+## Week 8
+### 🎞️ Week 8 Comparison Table – Animation Systems
+
+| **Feature** | **Animator Controller (State Machine)** | **Timeline** | **Blend Trees** |
+|-------------|-----------------------------------------|--------------|-----------------|
+| Use Case | Character movement, transitions (Idle → Walk → Jump) | Cinematic sequences, cutscenes, synced events | Smooth transitions between animations (walk to run) |
+| Setup Complexity | Moderate (nodes, transitions, parameters) | Visual and easy for non-coders | Requires properly parameterized motion states |
+| Scripting Involvement | Controlled with SetTrigger, SetBool, etc. | Minimal — mostly used visually | Needs script if affected by speed/direction |
+| Real-Time Interaction | Designed for interactive characters | Not interactive (pre-timed) | Real-time based on input or AI state |
+| Control Granularity | Medium – works best with clear states | High – frame-accurate, event-controlled | High – responsive and fluid |
+| Cool Factor | Feels like wiring up a robot brain 🤖 | Director’s chair mode 🎬 | Like teaching a dancer how to freestyle 💃 |
 
 
 ## 💡 Future Ideas & Experiments
@@ -301,6 +331,12 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 |          | Customize camera blend curves for events             | Smooth transitions based on story or movement events 🎬       |
 |
 
+| **Week 7** | 🔥 Build a fire propagation system based on terrain type | Adds gameplay depth — imagine fire spreading differently on grass, stone, or magical tiles! |
+| | 💨 Add wind force that dynamically affects flame direction | Makes fire feel alive — could use Unity’s wind zones or custom vector fields |
+| | 🌋 Procedural lava + fire burst system using Perlin noise | Gives a dynamic volcano or enemy attack system — juicy visuals + chaos! |
+| **Week 8** | 🕺 Procedural animation blending for hurt/win states | Adds polish — less animation assets, more fluid reactions |
+| | 🎥 Add cinematic camera control tied to Timeline events | Could zoom, shake, or fade during critical hits or boss intros |
+| | 🎭 Experiment with runtime rig retargeting for NPC variety | Makes crowd animations more varied — one rig, many identities |
 ## The Previous Spirals 🌀⏳
 
 Here’s a screenshot to immortalize the absolute chaos—proof that my first attempt didn’t just fail, it spectacularly failed. Exposing my own mess so future me has no choice but to fix it. 😂

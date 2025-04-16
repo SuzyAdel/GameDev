@@ -88,8 +88,8 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 |  | Shield UI didn’t update visually | Logic worked but fill bar stayed empty | Forgot to assign `Image.fillAmount` in script | The code worked… but forgot to tell the UI. 😶🖼️ |
 |  | Coroutine spawned shards too fast | Multiple shards appeared before 5s | Didn’t set `spawned` flag or use proper wait timing | Coroutine was a caffeine-fueled mess. ☕⚡ |
 |  | Player triggered shard but no feedback | No sound or particles on collection | Added particle system + audio source + trigger detection | The shard was shy. Gave it a glow-up. ✨🎶 |
-| **Week 7**  | | Fire particle flickering too fast | Flames looked like they were panicking 💥 | Adjusted particle lifetime and added slight delay between bursts | The fire had more anxiety than me during finals 🔥😅 |
-|  || Animation snapping between idle/walk | Jerky blend when speed was near zero | Smoothed the parameter threshold + added damping | My character’s dance moves were not it 💃🪩 |
+| **Week 7**   Fire particle flickering too fast | Flames looked like they were panicking 💥 | Adjusted particle lifetime and added slight delay between bursts | The fire had more anxiety than me during finals 🔥😅 |
+|  **Week 8**| Animation snapping between idle/walk | Jerky blend when speed was near zero | Smoothed the parameter threshold + added damping | My character’s dance moves were not it 💃🪩 |
 |  | Character floating during jump animation | Jump clip had root motion enabled | Disabled root motion for vertical transitions | Moonwalking in the air like it’s 2099 🚀🌕 |
 |  |Timeline didn’t trigger animation | Bound objects weren’t set in PlayableDirector | Manually dragged GameObject into track binding | Unity really said “do it yourself” 🧱👷 |
 ---

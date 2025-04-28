@@ -19,6 +19,7 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 ## Last Glass Catastrophe🔥💔
 
 Made a vicious spike collider that ruthlessly destroys any ball daring to fall on it—until I figure out how to make them burst into glorious, dramatic explosions. Also generated a maze script… which, uh, kinda exists but isn't exactly *mazey* yet. Work in progress. 😅
+![image](https://github.com/user-attachments/assets/1f1cc093-790e-4c39-8c45-0c8a72b93bd4)
 
 ## Maze Not Mazing
 -When the walls exist but the logic took a day off

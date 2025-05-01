@@ -25,6 +25,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 -When the walls exist but the logic took a day off
 ![image](https://github.com/user-attachments/assets/aa90d413-59a6-4a26-aafe-37db3671c028)
 
+![image](https://github.com/user-attachments/assets/4a83b452-05e4-4315-ae54-dfa86fe0cd75)
 
 ## Antarctica: Slippery Code Edition
 –A winter wonderland of bugs, where even my logic froze. ❄️

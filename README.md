@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ddca8bfb-8cb7-4133-8bf2-40c801f39991)# Unity Game Development Learning Journey 🚀
+# Unity Game Development Learning Journey 🚀
 Learning Unity physics, scripting, and game dev one bug at a time — with memes, color, and questionable experiments.
 
 
@@ -28,6 +28,7 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 ![image](https://github.com/user-attachments/assets/4a83b452-05e4-4315-ae54-dfa86fe0cd75)
 ![image](https://github.com/user-attachments/assets/52adc719-5959-48f0-a6b3-bd25aef5e255)
 ![image](https://github.com/user-attachments/assets/cf3cd680-fc7c-40d5-b84c-1639414617e4)
+
 
 ## Antarctica: Slippery Code Edition
 –A winter wonderland of bugs, where even my logic froze. ❄️

@@ -356,4 +356,9 @@ Here’s a screenshot to immortalize the absolute chaos—proof that my first at
 
 ![image](https://github.com/user-attachments/assets/d7f980d3-b3cd-497c-8994-5dbaaeadc2bf)
 
+## lecture updates 
+![image](https://github.com/user-attachments/assets/b777ea59-d1fa-48b8-8484-d6517fe8a2b5)
+
+![image](https://github.com/user-attachments/assets/715a12d9-d997-4e61-b6db-569ad1e61132)
+![image](https://github.com/user-attachments/assets/a7d5e302-61e1-41dd-a7cc-b362120ab2d7)
 

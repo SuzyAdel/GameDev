@@ -316,6 +316,14 @@ Made a vicious spike collider that ruthlessly destroys any ball daring to fall o
 | Cool Factor | Feels like wiring up a robot brain 🤖 | Director’s chair mode 🎬 | Like teaching a dancer how to freestyle 💃 |
 
 
+## Week 12 - ML agent 
+## Set rewrad vs Add reward 
+| Use `SetReward(value)`                                                       | Use `AddReward(value)`                                    |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Use when you're **ending the episode** and want to give the **final score**. | Use to **accumulate small feedbacks** over time.          |
+| Example: Win or fail state.                                                  | Example: Distance getting smaller, good orientation, etc. |
+
+
 ## 💡 Future Ideas & Experiments
 
 | Week     | Idea/Experiment                                      | Why It’s Cool                                                |

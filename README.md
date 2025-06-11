@@ -13,7 +13,7 @@ Learning Unity physics, scripting, and game dev one bug at a time — with memes
 | 6 | 🧱 Object Pooling, Collectibles System, Coroutines, Health & Shields |
 | 7 | 🔥 Particle Systems: Custom Fire, Snow, Gaussian Blur, Alpha, Billboard Effects |
 | 8 | 🕺 Animation Basics, State Machines, Blend Trees, Root Motion, Attack Effects |
-9 continuation l animation 
+|9|  
 ---
 
 ## Last Glass Catastrophe🔥💔
